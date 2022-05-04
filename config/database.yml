@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: psql
+  database: social_network
+  username: social_network
+  password: <%= ENV['SOCIAL_NETWORK_DATABASE_PASSSOCIAL_NETWORK']
