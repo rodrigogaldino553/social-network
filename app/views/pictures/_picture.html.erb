@@ -1,0 +1,10 @@
+<div id="<%= dom_id picture %>">
+  <p>
+    <% if picture.photo.attached?%>
+      <%= image_tag picture.photo %>
+    <% end %>
+    <strong>Legend:</strong>
+    <%= picture.legend %>
+  </p>
+
+</div>
