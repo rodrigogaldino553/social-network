@@ -73,3 +73,5 @@ group :test do
 end
 
 gem "aws-sdk-s3", "~> 1.114"
+
+gem "devise", "~> 4.8"
