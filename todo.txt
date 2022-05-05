@@ -8,3 +8,10 @@
 
 * users
   - create user profile
+    - create user controller and views like ruby gems corsego
+  
+  - add send mails
+  - add confirmable
+
+* footer no fim da pagina
+  - pra isso é so por o min-height do html como 100%
