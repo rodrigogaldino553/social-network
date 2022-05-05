@@ -75,3 +75,5 @@ end
 gem "aws-sdk-s3", "~> 1.114"
 
 gem "devise", "~> 4.8"
+
+gem "tailwindcss-rails", "~> 2.0"
