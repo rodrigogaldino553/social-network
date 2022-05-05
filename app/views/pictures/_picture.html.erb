@@ -1,11 +1,19 @@
-<div id="<%= dom_id picture %>">
-  <p>
-    <% if picture.photo.attached?%>
-      <%= image_tag picture.photo %>
-    <% end %>
-    <strong>Legend:</strong>
-    <%= picture.legend %>
-    <%= picture.user.name %>
-  </p>
-
+<div id="<%= dom_id picture %>" class="flex flex-col border-t-2 border-gray-200">
+  <div class="w-full">
+    <div class="w-full pb-3 flex flex-col">
+      <div class="px-2">
+        <%= render 'shared/user_icon', user: picture.user %>
+      </div>
+      <div class="w-full border-y-2 border-gray-100">
+        <% if picture.photo.attached? %>
+          <%= image_tag picture.photo, class: 'w-full h-52' %>
+        <% end %>
+      </div>
+      <div class="px-2 pt-1">
+        <%= link_to picture do %>
+          <strong><%= picture.user.name %></strong> <%= picture.legend[..40] %> <b>see more...</b>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

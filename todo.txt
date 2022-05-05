@@ -1,0 +1,10 @@
+* add no after sign up
+  - se nao tiver uma imagem no avatar, define uma default pra ele
+  - add validations to users, and users avatars
+
+* add validations to pictures
+  - add validations to pictures
+  - add validations to pictures :photo
+
+* users
+  - create user profile

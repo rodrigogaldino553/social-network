@@ -1,14 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Pictures</h1>
-
-<div id="pictures">
-  <% @pictures.each do |picture| %>
-    <%= render picture %>
-    <p>
-      <%= link_to "Show this picture", picture %>
-    </p>
-  <% end %>
+<div class="mx-auto sm:max-w-lg sm:container h-full my-2">
+  <div id="pictures" class="h-full w-full rounded-xl shadow-lg border-2 border-gray-300">
+    <% @pictures.each do |picture| %>
+      <%= render picture %>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New picture", new_picture_path %>
