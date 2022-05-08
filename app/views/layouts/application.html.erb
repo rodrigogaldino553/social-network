@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: max-content;">
+<html style="min-height: 100%; height: max-content;">
   <head>
     <title>SocialNetwork</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,11 +11,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body style="height: max-content;">
+  <body style="min-height: 100%; height: max-content;">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render 'shared/header' %>
-    <%= yield %>
+    <div style="min-height: 100vh; height: max-content;">
+      <%= render 'shared/header' %>
+      <div class="mt-2 mx-auto flex flex-col items-center">
+        <%= yield %>
+      </div>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>

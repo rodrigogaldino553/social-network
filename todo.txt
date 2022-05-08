@@ -13,5 +13,8 @@
   - add send mails
   - add confirmable
 
+* header
+  - fix header issues
+  
 * footer no fim da pagina
-  - pra isso é so por o min-height do html como 100%
+  [OK] pra isso é so por o min-height do html como 100%
