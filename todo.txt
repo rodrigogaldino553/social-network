@@ -6,14 +6,25 @@
   - add validations to pictures
   - add validations to pictures :photo
 
+*views
+  * add time_ago to pictures view
+  * fix view show
+  * add username to user profile view
+
 * users
   - create user profile
     - create user controller and views like ruby gems corsego
+  - update custom informations from devise
+  - set a char limit(40) to user description
+  - add username convertion in email first part/@
+
   
+  - use letter_oppner
   - add send mails
   - add confirmable
 
 * header
+  - header padding
   - fix header issues
   - arrumar opções(search users, add new picture)
   - arrumar logo
@@ -37,3 +48,4 @@
   - install ransack
   - install activity tracker
   - install facker
+  - font-awesome

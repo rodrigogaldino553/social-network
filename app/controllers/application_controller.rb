@@ -14,7 +14,11 @@ class ApplicationController < ActionController::Base
     #if current_user # when uses authorization # .has_role?(:admin)
       #dashboard_path
       # check if user avatar is nil, and set a default o it
-      root_path
+      # if action_name == "create" && !resource.avatar.attached?
+        # user.avatar is gone, set default here
+      # end
+      # binding.pry
+    root_path
     #elsif current_user # when uses authorization # .has_role?(:student)
     #  root_path
    #end
