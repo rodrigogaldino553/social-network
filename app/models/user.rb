@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :pictures_url
 
+  validates :avatar, attached: true,
+    content_type: { in: ['image/png', 'image/jpeg', 'image/jpg'], message: 'File selected is not a valid image' },
+    size: { less_than: 3.megabytes, message: 'Is too large' }
+
   validates :name, length: { maximum: 15 }
   validates :description, length: { maximum: 30 }
 
