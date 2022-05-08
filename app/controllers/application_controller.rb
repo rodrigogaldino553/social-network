@@ -7,12 +7,13 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # now it cant edit his avatar
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar, :name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar, :name, :description])
   end
 
   def after_sign_in_path_for(resource)
     #if current_user # when uses authorization # .has_role?(:admin)
       #dashboard_path
+      # check if user avatar is nil, and set a default o it
       root_path
     #elsif current_user # when uses authorization # .has_role?(:student)
     #  root_path

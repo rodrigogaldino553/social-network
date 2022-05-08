@@ -13,6 +13,11 @@
         <%= f.file_field :avatar, class: "form-control" %>
       </div>
 
+      <div class="field form-group">
+        <%= f.label :description, class: "form-label" %><br />
+        <%= f.text_field :description, class: "form-control" %>
+      </div>
+
       <div class="field form-group mb-4">
         <%= f.label :email, class: "form-label" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "form-control" %>

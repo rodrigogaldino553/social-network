@@ -8,6 +8,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <% if content_for?(:head) %>
+      <%= yield :head %>
+    <% end %>
+
+    <style>
+      .turbo-progress-bar{
+        background: pink !important;
+      }    
+    </style>
   </head>
 
   <body style="min-height: 100vh; height: max-content;">

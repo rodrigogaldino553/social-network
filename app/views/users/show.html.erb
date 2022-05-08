@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <%= render 'users/user_preview', user: @user, name: true %>
+    </div>
+    <div class="card-body">
+      <% if @pictures.count > 0 %>
+        <h4><%= "#{@user.name}'s pictures(#{@pictures.count})" %></h4>
+        <div class="grid justify-content-center align-items-center">
+          <div class="row">
+            <% @pictures.each do |picture| %>
+              <%= link_to picture, class: "col", style: "width: min-content; margin: 0 !important; padding: 0 !important;" do %>
+                <%= image_tag picture.photo, class: "border m-2", style: "width: 200px; height: 200px; object-fit: cover;" %>
+              <% end %>
+            <% end %>
+            </div>
+        </div>
+      <% else %>
+        <h2><%= "#{@user.name} haven't any picture yet :l" %></h2>
+      <% end %>
+    </div>
+  </div>
+</div>
