@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :pictures_url
 
+  validates :name, length: { maximum: 15 }
+  validates :description, length: { maximum: 30 }
+
   # validates email
 
   def username
