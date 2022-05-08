@@ -9,7 +9,9 @@
         <div class="grid justify-content-center align-items-center">
           <div class="row">
             <% @pictures.each do |picture| %>
-              <%= image_tag picture.photo, class: "border m-2 col", style: "width: 200px; height: 200px; object-fit: cover;" %>
+              <%= link_to picture, class: "col", style: "width: min-content; margin: 0 !important; padding: 0 !important;" do %>
+                <%= image_tag picture.photo, class: "border m-2", style: "width: 200px; height: 200px; object-fit: cover;" %>
+              <% end %>
             <% end %>
             </div>
         </div>

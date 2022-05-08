@@ -15,9 +15,20 @@
 
 * header
   - fix header issues
-  
+  - arrumar opções(search users, add new picture)
+  - arrumar logo
+
+* abrir modal ao clicar na foto no index
+  - ele abre um modal mostando a foto em full na tela, e um x pra sair
+
 * footer no fim da pagina
   [OK] pra isso é so por o min-height do html como 100%
+
+* add authorization com rolify e pundit
+
+* add likes(isso vai ter um relacionamento entre tabelas)
+
+* add comments(tbm vai ter relacionamento)
 
 * add unit specs
 
