@@ -1,8 +1,8 @@
-<div id="<%= dom_id picture %>" class="flex flex-col border-t-2 border-gray-200">
+<div id="<%= dom_id picture %>" class="d-flex d-flex-column border-t-2 border-gray-200">
   <div class="w-full">
-    <div class="w-full pb-3 flex flex-col">
-      <div class="px-2">
-        <%= render 'users/user_icon', user: picture.user %>
+    <div class="w-full pb-3 d-flex d-flex-column">
+      <div class="px-2 text-dark">
+        <%= render 'users/user_icon', user: picture.user, name: true %>
       </div>
       <div class="w-full border-y-2 border-gray-100">
         <% if picture.photo.attached? %>

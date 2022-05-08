@@ -1,12 +1,14 @@
-<%= link_to edit_user_registration_path(user) do %>
-  <div class="flex px-2 py-3 space-x-3 justify-start items-center">
+<%= link_to edit_user_registration_path(user), class: "no-decoration text-dark" do %>
+  <div class="d-flex px-2 py-3 justify-start align-items-center">
     <div>
       <% if user.avatar.attached? %>
         <%= image_tag user.avatar, style: "width: 50px; height: 50px; border-radius: 100%;" %>
       <% end %>
     </div>
-    <div class="flex justify-center items-center">
-      <%= user.name %>
-    </div>
+    <% if name %>
+      <div class="mx-2 d-flex justify-center align-items-center">
+        <%= user.name %>
+      </div>
+    <% end %>
   </div>
 <% end %>

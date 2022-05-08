@@ -1,9 +1,9 @@
 <!-- Image and text -->
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark px-1">
   <%= link_to pictures_path, class: "no-decoration" do %>
     <h5 class="navbar-brand no-decoration">SocialNetwork</h5>
   <% end %>
   <% if current_user %>
-    <%= render 'users/user_icon', user: current_user %>
+    <%= render 'users/user_icon', user: current_user, name: false %>
   <% end %>
 </nav>
