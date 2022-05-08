@@ -4,14 +4,16 @@
       <div class="px-2 text-dark border-bottom">
         <%= render 'users/user_icon', user: picture.user, name: true %>
       </div>
-      <div class="w-100 border-bottom">
-        <% if picture.photo.attached? %>
-          <%= image_tag picture.photo, class: 'w-100 h-54' %>
-        <% end %>
-      </div>
+      <%= link_to picture do %>
+        <div class="w-100 border-bottom">
+          <% if picture.photo.attached? %>
+            <%= image_tag picture.photo, class: 'w-100 h-54' %>
+          <% end %>
+        </div>
+      <% end %>
       <div class="px-2 pt-1">
         <%= link_to picture, class: "text-dark no-decoration" do %>
-          <strong><%= picture.user.name %></strong> <%= picture.legend[..40] %> <b>see more...</b>
+          <strong><%= picture.user.name %></strong> <%= action_name == "index" ? "#{picture.legend[..40]} <b>see more...</b>".html_safe : picture.legend %>
         <% end %>
       </div>
     </div>
