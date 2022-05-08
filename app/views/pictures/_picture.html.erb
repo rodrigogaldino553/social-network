@@ -1,16 +1,16 @@
-<div id="<%= dom_id picture %>" class="d-flex d-flex-column border-t-2 border-gray-200">
-  <div class="w-full">
-    <div class="w-full pb-3 d-flex d-flex-column">
-      <div class="px-2 text-dark">
+<div id="<%= dom_id picture %>" class="d-flex flex-column border-bottom">
+  <div class="w-100">
+    <div class="w-100 pb-3 d-flex flex-column">
+      <div class="px-2 text-dark border-bottom">
         <%= render 'users/user_icon', user: picture.user, name: true %>
       </div>
-      <div class="w-full border-y-2 border-gray-100">
+      <div class="w-100 border-bottom">
         <% if picture.photo.attached? %>
-          <%= image_tag picture.photo, class: 'w-full h-54' %>
+          <%= image_tag picture.photo, class: 'w-100 h-54' %>
         <% end %>
       </div>
       <div class="px-2 pt-1">
-        <%= link_to picture do %>
+        <%= link_to picture, class: "text-dark no-decoration" do %>
           <strong><%= picture.user.name %></strong> <%= picture.legend[..40] %> <b>see more...</b>
         <% end %>
       </div>
