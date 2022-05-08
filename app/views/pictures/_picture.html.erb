@@ -2,12 +2,12 @@
   <div class="w-100">
     <div class="w-100 pb-3 d-flex flex-column">
       <div class="px-2 text-dark border-bottom">
-        <%= render 'users/user_icon', user: picture.user, name: true %>
+        <%= render 'users/user_preview', user: picture.user, name: true %>
       </div>
       <%= link_to picture do %>
         <div class="w-100 border-bottom">
           <% if picture.photo.attached? %>
-            <%= image_tag picture.photo, class: 'w-100 h-54' %>
+            <%= image_tag picture.photo, class: 'photo w-100 h-54', style: "object-fit: cover;" %>
           <% end %>
         </div>
       <% end %>

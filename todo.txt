@@ -18,3 +18,11 @@
   
 * footer no fim da pagina
   [OK] pra isso é so por o min-height do html como 100%
+
+* add unit specs
+
+* gems
+  - install firndlyid
+  - install ransack
+  - install activity tracker
+  - install facker

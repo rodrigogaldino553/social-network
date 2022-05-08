@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures or /pictures.json
   def index
-    @pictures = Picture.all
+    @pictures = Picture.all.order(created_at: :desc)
   end
 
   # GET /pictures/1 or /pictures/1.json
@@ -23,7 +23,7 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
-
+    # validate picture.photo, cant be nil
     respond_to do |format|
       if @picture.save
         format.html { redirect_to picture_url(@picture), notice: "Picture was successfully created." }
