@@ -11,6 +11,11 @@
           <%= user.name %>
         </div>
       <% end %>
+      <% if action_name == "index" && current_page?(pictures_path) %>
+        <div class="mx-2 d-flex justify-center align-items-center text-secondary">
+          <%= user.username %>
+        </div>
+      <% end %>
       <% if current_page?(users_path) || current_page?(user_path(1)) && name %>
         <div class="mx-2 d-flex justify-center align-items-center text-secondary">
           <%= user.description %>

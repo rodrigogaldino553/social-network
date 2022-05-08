@@ -14,5 +14,6 @@ class User < ApplicationRecord
 
   def username
     # logic to split user email at @ and take the fisrt part
+    self.email.split(/@/).first
   end
 end
