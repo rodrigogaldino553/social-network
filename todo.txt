@@ -17,6 +17,8 @@
   - update custom informations from devise
   [OK] set a char limit(40) to user description
   [OK] add username convertion in email first part/@
+  - user non logged in can access index page
+  - fix errors page
   - add user profile preview like github, content: https://www.youtube.com/watch?v=_T6uOL9L7NM&t=1s
 
   
