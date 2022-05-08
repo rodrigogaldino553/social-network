@@ -1,0 +1,20 @@
+* add no after sign up
+  - se nao tiver uma imagem no avatar, define uma default pra ele
+  - add validations to users, and users avatars
+
+* add validations to pictures
+  - add validations to pictures
+  - add validations to pictures :photo
+
+* users
+  - create user profile
+    - create user controller and views like ruby gems corsego
+  
+  - add send mails
+  - add confirmable
+
+* header
+  - fix header issues
+  
+* footer no fim da pagina
+  [OK] pra isso é so por o min-height do html como 100%

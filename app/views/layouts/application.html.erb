@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html style="min-height: 100vh; height: max-content;">
   <head>
     <title>SocialNetwork</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render 'shared/header' %>
-    <%= yield %>
+  <body style="min-height: 100vh; height: max-content;">
+    <%= render 'shared/alert' %>
+    <div style="min-height: 100vh; height: max-content;">
+      <%= render 'shared/header' %>
+      <div class="mt-2 mx-auto d-flex flex-column align-middle">
+        <%= yield %>
+      </div>
+    </div>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>

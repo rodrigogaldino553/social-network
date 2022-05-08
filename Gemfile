@@ -76,4 +76,7 @@ gem "aws-sdk-s3", "~> 1.114"
 
 gem "devise", "~> 4.8"
 
-gem "tailwindcss-rails", "~> 2.0"
+
+gem "sassc-rails", "~> 2.1"
+
+gem "bootstrap", "~> 5.1.3"
