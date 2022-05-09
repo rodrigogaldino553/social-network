@@ -11,7 +11,7 @@
           <%= user.name %>
         </div>
       <% end %>
-      <% if action_name == "index" && current_page?(pictures_path) %>
+      <% if action_name == "index" && current_page?(pictures_path) && name %>
         <div class="mx-2 d-flex justify-center align-items-center text-secondary">
           <%= user.username %>
         </div>
