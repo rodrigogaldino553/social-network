@@ -181,6 +181,8 @@ GEM
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
+    pundit (2.2.0)
+      activesupport (>= 3.0.0)
     racc (1.6.0)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -219,6 +221,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rolify (6.0.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -285,7 +288,9 @@ DEPENDENCIES
   pg
   pry-byebug (~> 3.9)
   puma (~> 5.0)
+  pundit (~> 2.2)
   rails (~> 7.0.2, >= 7.0.2.3)
+  rolify (~> 6.0)
   sassc-rails (~> 2.1)
   selenium-webdriver
   sprockets-rails
