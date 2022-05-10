@@ -15,15 +15,17 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :description, length: { maximum: 30 }
 
-  # validates email
+  before_validation :no_avatar
 
   def username
     # logic to split user email at @ and take the fisrt part
     self.email.split(/@/).first
   end
 
-  def show_avatar
-    return 'https://hey-brow.herokuapp.com/assets/padrao.png' unless self.avatar.attached?
-    self.avatar
+  def no_avatar
+    unless self.avatar.attached?
+      avatar_path = ActionController::Base.helpers.asset_path('padrao.png')
+      self.avatar.attach(io: File.open('./app/assets/images/padrao.png'), filename: 'default.png', content_type: 'image/png')
+    end
   end
 end
