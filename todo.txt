@@ -2,13 +2,22 @@
   - se nao tiver uma imagem no avatar, define uma default pra ele
   [OK] add validations to users, and users avatars
 
+* add param "data: { disable_with: 'message' }" to button, to block double requests, try it out to test
+
 [OK] add validations to pictures
   [OK] add validations to pictures
   [OK] add validations to pictures :photo
 
+* look at this UI example: https://www.youtube.com/watch?v=4WoOjIaEkOY
+
+* add the possibility to users follow each other
+  - user see posts only from who he follows, like here: https://www.youtube.com/watch?v=4WoOjIaEkOY
+
 *views
   * add time_ago to pictures view
-  * fix view show
+  * fix view pictures show
+  - no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
+  - add o preview da imagem com um pop up na tela inteira
   [OK] add username to user profile view
 
 * users
