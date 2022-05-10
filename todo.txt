@@ -1,19 +1,42 @@
 * add no after sign up
   - se nao tiver uma imagem no avatar, define uma default pra ele
-  - add validations to users, and users avatars
+  [OK] add validations to users, and users avatars
 
-* add validations to pictures
-  - add validations to pictures
-  - add validations to pictures :photo
+* add param "data: { disable_with: 'message' }" to button, to block double requests, try it out to test
+
+[OK] add validations to pictures
+  [OK] add validations to pictures
+  [OK] add validations to pictures :photo
+
+* look at this UI example: https://www.youtube.com/watch?v=4WoOjIaEkOY
+
+* add the possibility to users follow each other
+  - user see posts only from who he follows, like here: https://www.youtube.com/watch?v=4WoOjIaEkOY
+
+*views
+  * add time_ago to pictures view
+  * fix view pictures show
+  - no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
+  - add o preview da imagem com um pop up na tela inteira
+  [OK] add username to user profile view
 
 * users
-  - create user profile
-    - create user controller and views like ruby gems corsego
+  [OK] create user profile
+    [OK] create user controller and views like ruby gems corsego
+  - update custom informations from devise
+  [OK] set a char limit(40) to user description
+  [OK] add username convertion in email first part/@
+  - user non logged in can access index page
+  - fix errors page
+  - add user profile preview like github, content: https://www.youtube.com/watch?v=_T6uOL9L7NM&t=1s
+
   
-  - add send mails
+  - use letter_oppner
+  - add send mails, content: https://www.youtube.com/watch?v=eYhi_rbnOo8
   - add confirmable
 
 * header
+  - header padding
   - fix header issues
   - arrumar opções(search users, add new picture)
   - arrumar logo
@@ -21,12 +44,14 @@
 * abrir modal ao clicar na foto no index
   - ele abre um modal mostando a foto em full na tela, e um x pra sair
 
-* footer no fim da pagina
+[OK] footer no fim da pagina
   [OK] pra isso é so por o min-height do html como 100%
 
-* add authorization com rolify e pundit
+* infinity scroll, content: https://www.youtube.com/watch?v=ScxUqW29F7E
 
-* add likes(isso vai ter um relacionamento entre tabelas)
+* add authorization com rolify e pundit, content: https://www.youtube.com/watch?v=URDKxGn0pxo&t=9s , https://www.youtube.com/watch?v=xxkx57-vbQI&t=2s
+
+* add likes(isso vai ter um relacionamento entre tabelas), content: https://www.youtube.com/watch?v=o26zl4jskWU&t=17s
 
 * add comments(tbm vai ter relacionamento)
 
@@ -37,3 +62,4 @@
   - install ransack
   - install activity tracker
   - install facker
+  - font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
