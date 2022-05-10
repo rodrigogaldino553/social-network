@@ -83,3 +83,7 @@ gem "sassc-rails", "~> 2.1"
 gem "bootstrap", "~> 5.1.3"
 
 gem "active_storage_validations", "~> 0.9.8"
+
+gem "pundit", "~> 2.2"
+
+gem "rolify", "~> 6.0"
