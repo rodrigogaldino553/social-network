@@ -7,8 +7,13 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # now it cant edit his avatar
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar, :name, :description])
-    #devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :name, :description])
+    if action_name == 'create'
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar, :name, :description])
+    elsif action_name == 'edit'
+      #binding.pry
+      # por enquanto os custom fields nao poderao ser atualizados
+      # devise_parameter_sanitizer.permit(:account_update)# , keys: [:avatar, :name, :description])
+    end
   end
 
   def after_sign_in_path_for(resource)
