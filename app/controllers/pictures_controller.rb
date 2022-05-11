@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!, only: [:index]
 
   # GET /pictures or /pictures.json
   def index
@@ -17,6 +18,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1/edit
   def edit
+    authorize @picture
   end
 
   # POST /pictures or /pictures.json
@@ -49,6 +51,7 @@ class PicturesController < ApplicationController
 
   # DELETE /pictures/1 or /pictures/1.json
   def destroy
+    authorize @picture
     @picture.destroy
 
     respond_to do |format|

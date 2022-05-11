@@ -1,5 +1,5 @@
-* add no after sign up
-  - se nao tiver uma imagem no avatar, define uma default pra ele
+[OK] add no after sign up
+  [OK] se nao tiver uma imagem no avatar, define uma default pra ele
   [OK] add validations to users, and users avatars
 
 * add param "data: { disable_with: 'message' }" to button, to block double requests, try it out to test
@@ -14,8 +14,8 @@
   - user see posts only from who he follows, like here: https://www.youtube.com/watch?v=4WoOjIaEkOY
 
 *views
-  * add time_ago to pictures view
-  * fix view pictures show
+  - add time_ago to pictures view
+  - fix view pictures show
   - no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
   - add o preview da imagem com um pop up na tela inteira
   [OK] add username to user profile view
@@ -26,9 +26,9 @@
   - update custom informations from devise
   [OK] set a char limit(40) to user description
   [OK] add username convertion in email first part/@
-  - user non logged in can access index page
+  [OK] user non logged in can access index page
   - fix errors page
-  - add user profile preview like github, content: https://www.youtube.com/watch?v=_T6uOL9L7NM&t=1s
+  - add user profile preview on hover user name like github, content: https://www.youtube.com/watch?v=_T6uOL9L7NM&t=1s
 
   
   - use letter_oppner
@@ -63,3 +63,4 @@
   - install activity tracker
   - install facker
   - font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
+  - da uma olhada na gem active admin, é interessante

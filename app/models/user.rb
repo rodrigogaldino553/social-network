@@ -1,8 +1,22 @@
 class User < ApplicationRecord
+  after_create :assign_default_role
+
+  def assign_default_role
+    self.add_role(:user) if self.roles.blank?
+  end
+  #enum role: [:user, :admin]
+  #after_initialize :set_default_role, if: :new_record?
+
+  #def set_default_role
+  #  user ||= :user
+  #end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  rolify
 
   has_one_attached :avatar
   has_many :pictures_url
@@ -15,15 +29,17 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :description, length: { maximum: 30 }
 
-  # validates email
+  before_validation :no_avatar
 
   def username
     # logic to split user email at @ and take the fisrt part
     self.email.split(/@/).first
   end
 
-  def show_avatar
-    return 'https://hey-brow.herokuapp.com/assets/padrao.png' unless self.avatar.attached?
-    self.avatar
+  def no_avatar
+    unless self.avatar.attached?
+      avatar_path = ActionController::Base.helpers.asset_path('padrao.png')
+      self.avatar.attach(io: File.open('./app/assets/images/padrao.png'), filename: 'default.png', content_type: 'image/png')
+    end
   end
 end
