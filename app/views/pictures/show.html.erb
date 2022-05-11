@@ -1,10 +1,12 @@
-<%= render @picture %>
+<div class="mt-4 mb-5 pb-4">
+  <!--navigation here-->
+  <%= render @picture %>
 
-<div class="d-flex">
-  <%= link_to "Back to pictures", pictures_path %>
-  <% if policy(@picture).edit? %>
-    <%= link_to "Edit legend", edit_picture_path(@picture), class: "btn btn-warning" %> |
+  <div class="d-flex">
+    <% if policy(@picture).edit? %>
+      <%= link_to "Edit legend", edit_picture_path(@picture), class: "btn btn-warning" %> |
 
-    <%= button_to "Destroy this picture", @picture, method: :delete, class: "btn btn-danger" %>
-  <% end %>
+      <%= button_to "Destroy this picture", @picture, method: :delete, class: "btn btn-danger" %>
+    <% end %>
+  </div>
 </div>
