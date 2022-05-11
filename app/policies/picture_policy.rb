@@ -7,6 +7,11 @@ class PicturePolicy < ApplicationPolicy
   end
 
   def edit?
-    @record.user == @user #  || @user.has_role?(:admin)
+    @record.user == @user
+  end
+
+  def destroy?
+    # ver como usar o user has_hole ou algum jeito pra esse current_user.admin
+    @record.user == @user || @user.has_role?(:admin)
   end
 end
