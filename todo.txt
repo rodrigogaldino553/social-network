@@ -16,8 +16,10 @@
 *views
   - add time_ago to pictures view
   - fix view pictures show
-  - no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
-  - add o preview da imagem com um pop up na tela inteira
+  [OK] no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
+  [OUT] add o preview da imagem com um pop up na tela inteira
+  - add navigation
+  - add ground navigation with basics options, like(home, search, back, create...)
   [OK] add username to user profile view
 
 * users

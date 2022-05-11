@@ -1,20 +1,20 @@
 <%= content_for :head do %>
   <style>
-  @media(max-width: 566px){
-    #pictures .photo{
-      height: 235px;
+    @media(max-width: 566px){
+      #pictures .photo{
+        height: 235px;
+      }
     }
-  }
-  @media(min-width: 567px){
-    #pictures .photo{
-      height: 450px;
+    @media(min-width: 567px){
+      #pictures .photo{
+        height: 450px;
+      }
     }
-  }
   </style>
 <% end %>
 
 <div class="mx-auto sm:max-w-lg container h-full my-2">
-  <div id="pictures" class="h-full w-100 rounded-2 shadow border">
+  <div id="pictures" class="h-full w-100 rounded-2">
     <% @pictures.each do |picture| %>
       <%= render picture %>
     <% end %>

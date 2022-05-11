@@ -1,20 +1,25 @@
-<div id="<%= dom_id picture %>" class="d-flex flex-column border-bottom">
-  <div class="w-100">
-    <div class="w-100 pb-3 d-flex flex-column">
-      <div class="px-2 text-dark border-bottom">
-        <%= render 'users/user_preview', user: picture.user, name: true %>
-      </div>
-      <%= link_to picture do %>
-        <div class="w-100 border-bottom">
-          <% if picture.photo.attached? %>
-            <%= image_tag picture.photo, class: 'photo w-100 h-54', style: "object-fit: cover;" %>
-          <% end %>
-        </div>
-      <% end %>
-      <div class="px-2 pt-1">
-        <%= link_to picture, class: "text-dark no-decoration" do %>
-          <strong><%= picture.user.name %></strong> <%= action_name == "index" ? "#{picture.legend[..40]} <b>see more...</b>".html_safe : picture.legend %>
+<div id="<%= dom_id picture %>" class="card my-1 shadow">
+  <div class="card-header">
+    <%= render 'users/user_preview', user: picture.user, name: true %>
+  </div>
+  <div class="card-body p-0">
+    <%= link_to picture do %>
+      <div class="w-100 border-bottom">
+        <% if picture.photo.attached? %>
+          <%= image_tag picture.photo, class: 'photo w-100 h-54', style: "object-fit: cover;" %>
         <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="card-footer">
+    <div class="picture-legend">
+      <%= link_to picture, class: "text-dark no-decoration" do %>
+        <strong><%= picture.user.name %></strong> <%= action_name == "index" ? "#{picture.legend[..40]} <b>see more...</b>".html_safe : picture.legend %>
+      <% end %>
+    </div>
+    <div>
+      <div>
+        <i class="fa-solid fa-comment-dots"></i>
       </div>
     </div>
   </div>
