@@ -1,7 +1,19 @@
 <div class="mt-4 mb-5 pb-4">
   <!--navigation here-->
-  <%= render @picture %>
-
+  <div>
+    <%= render @picture %>
+    <div id="comments" class="mt-5 mx-2">
+      <h4>Comments (<%= @picture.comments.count %>)</h4>
+      <div class="mb-2">
+        <%= render 'pictures/comments/form', picture: @picture %>
+      </div>
+      <div class="my-5">
+        <% @picture.comments.each do |comment| %>
+          <%= render 'pictures/comments/comment', comment: comment %>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <div class="d-flex">
     <% if policy(@picture).edit? %>
       <%= link_to "Edit legend", edit_picture_path(@picture), class: "btn btn-warning" %> |

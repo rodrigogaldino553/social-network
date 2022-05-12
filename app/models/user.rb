@@ -4,12 +4,6 @@ class User < ApplicationRecord
   def assign_default_role
     self.add_role(:user) if self.roles.blank?
   end
-  #enum role: [:user, :admin]
-  #after_initialize :set_default_role, if: :new_record?
-
-  #def set_default_role
-  #  user ||= :user
-  #end
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -20,6 +14,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_many :pictures_url
+  has_many :comments, dependent: :nullify
 
   validates :avatar, attached: true,
     content_type: { in: ['image/png', 'image/jpeg', 'image/jpg'], message: 'File selected is not a valid image' },

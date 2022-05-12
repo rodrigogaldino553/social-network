@@ -18,8 +18,13 @@
       <% end %>
     </div>
     <div>
-      <div>
-        <i class="fa-solid fa-comment-dots"></i>
+      <div class="d-flex justify-start mt-4">
+        <%= link_to "#{picture_path(picture)}/#comments", class: 'no-decoration text-dark' do %>
+          <div class="d-flex flex-column text-center">
+            <h5><i class="fa-solid fa-comment-dots "></i></h5>
+            <%= picture.comments.count %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

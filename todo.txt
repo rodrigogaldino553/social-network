@@ -21,6 +21,7 @@
   - add navigation
   - add ground navigation with basics options, like(home, search, back, create...)
   [OK] add username to user profile view
+  - add turbo to comments and likes
 
 * users
   [OK] create user profile
