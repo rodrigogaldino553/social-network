@@ -63,7 +63,8 @@
 * gems
   - install firndlyid
   - install ransack
-  - install activity tracker
+  - install public activity tracker
+  - inatall notification error by email in production
   - install facker
   - font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
   - da uma olhada na gem active admin, é interessante
