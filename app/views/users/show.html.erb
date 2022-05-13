@@ -23,7 +23,7 @@
                 <div class="row">
               <% end %>
               <%= link_to picture, class: "col", style: "width: min-content; margin: 4px !important; padding: 0 !important;" do %>
-                <%= image_tag picture.photo, class: "border w-100 h-100", style: " object-fit: cover;" %>
+                <%= image_tag picture.photo, class: "border w-100 h-100", style: "max-width: 300px; max-height: 300px; object-fit: cover;" %>
               <% end %>
             <% end %>
             </div>
