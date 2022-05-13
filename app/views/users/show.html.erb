@@ -2,16 +2,28 @@
   <h4><%= "<-- #{@user.username}'s  Profile" %></h4>
   <div class="card">
     <div class="card-header">
-      <%= render 'users/user_preview', user: @user, name: true %>
+      <div></div>
+        <%= render 'users/user_preview', user: @user, name: true %>
+      <% if (current_user && current_user.id == @user.id ) %>
+        <div>
+          <%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
+            Edit Profile
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="card-body">
       <% if @pictures.count > 0 %>
         <h4><%= "#{@user.name}'s pictures(#{@pictures.count})" %></h4>
         <div class="grid justify-content-center align-items-center">
           <div class="row">
-            <% @pictures.each do |picture| %>
-              <%= link_to picture, class: "col", style: "width: min-content; margin: 0 !important; padding: 0 !important;" do %>
-                <%= image_tag picture.photo, class: "border m-2", style: "width: 200px; height: 200px; object-fit: cover;" %>
+            <% @pictures.each_with_index do |picture, index| %>
+              <% if index %3 == 0%>
+                </div>
+                <div class="row">
+              <% end %>
+              <%= link_to picture, class: "col", style: "width: min-content; margin: 4px !important; padding: 0 !important;" do %>
+                <%= image_tag picture.photo, class: "border w-100 h-100", style: " object-fit: cover;" %>
               <% end %>
             <% end %>
             </div>

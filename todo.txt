@@ -16,6 +16,7 @@
 *views
   - add time_ago to pictures view
   - fix view pictures show
+  - put edit destroy butons inside card-footer
   [OK] no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
   [OUT] add o preview da imagem com um pop up na tela inteira
   - add navigation
