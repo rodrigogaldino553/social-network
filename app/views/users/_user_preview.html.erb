@@ -1,8 +1,8 @@
-<%= link_to (current_user && current_user.id == user.id ? edit_user_registration_path : user_path(user)), class: "no-decoration text-dark" do %>
+<%= link_to (user_path(user)), class: "no-decoration text-dark" do %>
   <div class="d-flex px-2 py-3 justify-start align-items-center">
     <div>
       <% if user.avatar.attached? %>
-        <%= image_tag user.avatar, style: "width: 50px; height: 50px; border-radius: 100%;" %>
+        <%= image_tag user.avatar, style: "width: 50px; height: 50px; border-radius: 100%; object-fit: cover;" %>
       <% end %>
     </div>
     <div>
@@ -16,7 +16,7 @@
           <%= user.username %>
         </div>
       <% end %>
-      <% if current_page?(users_path) || current_page?(user_path(1)) && name %>
+      <% if current_page?(users_path) || current_page?(user_path(user.id)) && name %>
         <div class="mx-2 d-flex justify-center align-items-center text-secondary">
           <%= user.description %>
         </div>

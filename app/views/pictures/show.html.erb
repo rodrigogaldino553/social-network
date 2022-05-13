@@ -1,7 +1,15 @@
-<div class="mt-4 mb-5 pb-4">
+<div class="mx-2 mt-4 mb-5 pb-4">
   <!--navigation here-->
   <div>
     <%= render @picture %>
+    <div class="d-flex"> 
+      <% if policy(@picture).edit? %>
+        <%= link_to "Edit legend", edit_picture_path(@picture), class: "btn btn-warning" %> |
+        
+        <%= button_to "Destroy this picture", @picture, method: :delete, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+
     <div id="comments" class="mt-5 mx-2">
       <h4>Comments (<%= @picture.comments.count %>)</h4>
       <div class="mb-2">
@@ -13,12 +21,5 @@
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="d-flex">
-    <% if policy(@picture).edit? %>
-      <%= link_to "Edit legend", edit_picture_path(@picture), class: "btn btn-warning" %> |
-
-      <%= button_to "Destroy this picture", @picture, method: :delete, class: "btn btn-danger" %>
-    <% end %>
   </div>
 </div>
