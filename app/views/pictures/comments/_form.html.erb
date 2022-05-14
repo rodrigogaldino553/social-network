@@ -1,4 +1,8 @@
 <%= form_with(url: "#{picture_comments_path(picture)}") do |f| %>
-  <%= text_field "comment", "content" %>
-  <%= f.submit 'Comment' %>
+  <div class="form-group d-flex">
+    <%= text_field "comment", "content", class: 'form-control mx-2' %>
+    <%= f.button class: 'btn btn-primary d-flex justify-content-space-between align-items-center' do %>
+      Send <i class="fa fa-paper-plane mx-1" aria-hidden="true"></i>
+    <% end %>
+  </div>
 <% end %>

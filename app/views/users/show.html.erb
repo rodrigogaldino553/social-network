@@ -1,3 +1,31 @@
+<!-- move to stylesheets files -->
+  <style>
+    @media(max-width: 2000px){
+      .content-row{
+        height: 250px;
+      }
+      .content-row .content{
+        height: 250px;
+      }
+    }
+    @media(max-width: 760px){
+      .content-row{
+        height: 150px;
+      }
+      .content-row .content{
+        height: 150px;
+      }
+    }
+    @media(max-width: 430px){
+      .content-row{
+        height: 100px;
+      }
+      .content-row .content{
+        height: 100px;
+      }
+    }
+  </style>
+<!-- move to stylesheets files -->
 <div class="container">
   <h4><%= "<-- #{@user.username}'s  Profile" %></h4>
   <div class="card">
@@ -15,15 +43,14 @@
     <div class="card-body">
       <% if @pictures.count > 0 %>
         <h4><%= "#{@user.name}'s pictures(#{@pictures.count})" %></h4>
-        <div class="grid justify-content-center align-items-center">
-          <div class="row">
+        <div class="grid">
             <% @pictures.each_with_index do |picture, index| %>
               <% if index %3 == 0%>
                 </div>
-                <div class="row">
+                <div class="row row-cols-3 content-row">
               <% end %>
-              <%= link_to picture, class: "col", style: "width: min-content; margin: 4px !important; padding: 0 !important;" do %>
-                <%= image_tag picture.photo, class: "border w-100 h-100", style: "max-width: 300px; max-height: 300px; object-fit: cover;" %>
+              <%= link_to picture, class: "p-0 border-1 content" do %>
+                <%= image_tag picture.photo, class: "border w-100 h-100", style: "object-fit: cover;" %>
               <% end %>
             <% end %>
             </div>

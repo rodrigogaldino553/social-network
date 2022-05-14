@@ -1,6 +1,22 @@
 <div class="card my-2">
   <div class="card-header">
-    <%= render 'users/user_preview', user: comment.user, name: true %>
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <%= render 'users/user_preview', user: comment.user, name: true %>
+      </div>
+      <div class="d-flex justify-content-space-around">
+        <span class="text-secondary m-2">
+          <%= time_ago_in_words(comment.created_at) %> ago
+        </span>
+        <% if policy(comment).destroy? %>
+          <div>
+            <%= button_to [@picture, comment], method: :delete, class: "btn btn-danger" do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="card-body">
     <p><%= comment.content %></p>

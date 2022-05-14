@@ -2,11 +2,12 @@
   [OK] se nao tiver uma imagem no avatar, define uma default pra ele
   [OK] add validations to users, and users avatars
 
-* add param "data: { disable_with: 'message' }" to button, to block double requests, try it out to test
+  [OK] add param "data: { disable_with: 'message' }" to button, to block double requests, try it out to test
 
-[OK] add validations to pictures
+[OK] active storage
   [OK] add validations to pictures
   [OK] add validations to pictures :photo
+  - use paperclip or rmagick to resize images uploaded before to save
 
 * look at this UI example: https://www.youtube.com/watch?v=4WoOjIaEkOY
 
@@ -14,8 +15,9 @@
   - user see posts only from who he follows, like here: https://www.youtube.com/watch?v=4WoOjIaEkOY
 
 *views
-  - add time_ago to pictures view
+  [OK] add time_ago to pictures view
   - fix view pictures show
+  - fix view user show grid images and options
   - put edit destroy butons inside card-footer
   [OK] no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
   [OUT] add o preview da imagem com um pop up na tela inteira
@@ -27,6 +29,7 @@
 * users
   [OK] create user profile
     [OK] create user controller and views like ruby gems corsego
+  - add advise that cant update information temporaly
   - update custom informations from devise
   [OK] set a char limit(40) to user description
   [OK] add username convertion in email first part/@
@@ -65,6 +68,7 @@
   - install firndlyid
   - install ransack
   - install public activity tracker
+  - add notification to users by activities like, receive comment, someone start to follow, someone liked...
   - inatall notification error by email in production
   - install facker
   - font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
