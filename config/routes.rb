@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/like'
+  get 'likes/unlike'
   devise_for :users
   resources :pictures do
     resources :comments, except: [:index]
