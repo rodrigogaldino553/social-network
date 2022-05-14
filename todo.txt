@@ -16,9 +16,9 @@
 
 *views
   [OK] add time_ago to pictures view
-  - fix view pictures show
-  - fix view user show grid images and options
-  - put edit destroy butons inside card-footer
+  [OK] fix view pictures show
+  [OK] fix view user show grid images and options
+  [OK] put edit destroy butons inside card-footer
   [OK] no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
   [OUT] add o preview da imagem com um pop up na tela inteira
   - add navigation
@@ -48,8 +48,8 @@
   - arrumar opções(search users, add new picture)
   - arrumar logo
 
-* abrir modal ao clicar na foto no index
-  - ele abre um modal mostando a foto em full na tela, e um x pra sair
+[OUT] abrir modal ao clicar na foto no index
+  [OUT] ele abre um modal mostando a foto em full na tela, e um x pra sair
 
 [OK] footer no fim da pagina
   [OK] pra isso é so por o min-height do html como 100%
