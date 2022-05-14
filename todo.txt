@@ -2,7 +2,7 @@
   [OK] se nao tiver uma imagem no avatar, define uma default pra ele
   [OK] add validations to users, and users avatars
 
-* add param "data: { disable_with: 'message' }" to button, to block double requests, try it out to test
+  [OK] add param "data: { disable_with: 'message' }" to button, to block double requests, try it out to test
 
 [OK] active storage
   [OK] add validations to pictures
@@ -15,7 +15,7 @@
   - user see posts only from who he follows, like here: https://www.youtube.com/watch?v=4WoOjIaEkOY
 
 *views
-  - add time_ago to pictures view
+  [OK] add time_ago to pictures view
   - fix view pictures show
   - fix view user show grid images and options
   - put edit destroy butons inside card-footer

@@ -2,15 +2,18 @@
   <!--navigation here-->
   <div>
     <%= render @picture %>
-    <div class="d-flex"> 
-      <% if policy(@picture).edit? %>
-        <%= link_to "Edit legend", edit_picture_path(@picture), class: "btn btn-warning" %> |
-        
+    <h5>You can:</h5>
+    <% if policy(@picture).edit? %>
+      <div class="d-flex mb-4">
+        <%= link_to edit_picture_path(@picture), class: "btn btn-warning text-light mx-2" do %>
+          Edit <i class="fa fa-pencil-square" aria-hidden="true"></i>
+        <% end %>
         <%= button_to @picture, method: :delete, class: "btn btn-danger" do %>
           Delete <i class="fa fa-trash" aria-hidden="true"></i>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+      <hr></hr>
+    <% end %>
 
     <div id="comments" class="mt-5 mx-2">
       <h4>Comments (<%= @picture.comments.count %>)</h4>
