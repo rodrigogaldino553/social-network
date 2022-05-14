@@ -15,6 +15,13 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @picture = Picture.find(params[:picture_id])
+    @comment = Comment.find(params[:id])
+    authorize @comment
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to picture_path(@picture), notice: 'Comment sussfully deleted!' }
+    end
   end
 
   private
