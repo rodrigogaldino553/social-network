@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_14_232435) do
   end
 
   create_table "likes", force: :cascade do |t|
+    t.boolean "like", default: false
     t.integer "picture_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
