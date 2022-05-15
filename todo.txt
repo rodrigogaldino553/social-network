@@ -36,11 +36,16 @@
   [OK] user non logged in can access index page
   - fix errors page
   - add user profile preview on hover user name like github, content: https://www.youtube.com/watch?v=_T6uOL9L7NM&t=1s
-
+  - add infos like followers, following and posts count in user show header
   
   - use letter_oppner
   - add send mails, content: https://www.youtube.com/watch?v=eYhi_rbnOo8
   - add confirmable
+
+* admin
+  - create admin_users view
+    it could be like corsego, show all users, and status, like if online, last sign in....
+  - add easyly way to admin destroy picture
 
 * header
   - header padding
@@ -60,10 +65,14 @@
 [OK] add authorization com rolify e pundit, content: https://www.youtube.com/watch?v=URDKxGn0pxo&t=9s , https://www.youtube.com/watch?v=xxkx57-vbQI&t=2s
 
 [OK] add likes(isso vai ter um relacionamento entre tabelas), content: https://www.youtube.com/watch?v=o26zl4jskWU&t=17s
+  - make likes works with turbo
 
 [OK] add comments(tbm vai ter relacionamento)
+  - make comments works with turbo
 
 * add unit specs
+
+* add verifeid feature
 
 * gems
   - install firndlyid
