@@ -16,9 +16,9 @@
 
 *views
   [OK] add time_ago to pictures view
-  - fix view pictures show
-  - fix view user show grid images and options
-  - put edit destroy butons inside card-footer
+  [OK] fix view pictures show
+  [OK] fix view user show grid images and options
+  [OK] put edit destroy butons inside card-footer
   [OK] no pictures index, quero mudar o componente das imagens, passar a ser um boostrap card, tlg?
   [OUT] add o preview da imagem com um pop up na tela inteira
   - add navigation
@@ -47,20 +47,21 @@
   - fix header issues
   - arrumar opções(search users, add new picture)
   - arrumar logo
+  - add favicon
 
-* abrir modal ao clicar na foto no index
-  - ele abre um modal mostando a foto em full na tela, e um x pra sair
+[OUT] abrir modal ao clicar na foto no index
+  [OUT] ele abre um modal mostando a foto em full na tela, e um x pra sair
 
 [OK] footer no fim da pagina
   [OK] pra isso é so por o min-height do html como 100%
 
 * infinity scroll, content: https://www.youtube.com/watch?v=ScxUqW29F7E
 
-* add authorization com rolify e pundit, content: https://www.youtube.com/watch?v=URDKxGn0pxo&t=9s , https://www.youtube.com/watch?v=xxkx57-vbQI&t=2s
+[OK] add authorization com rolify e pundit, content: https://www.youtube.com/watch?v=URDKxGn0pxo&t=9s , https://www.youtube.com/watch?v=xxkx57-vbQI&t=2s
 
-* add likes(isso vai ter um relacionamento entre tabelas), content: https://www.youtube.com/watch?v=o26zl4jskWU&t=17s
+[OK] add likes(isso vai ter um relacionamento entre tabelas), content: https://www.youtube.com/watch?v=o26zl4jskWU&t=17s
 
-* add comments(tbm vai ter relacionamento)
+[OK] add comments(tbm vai ter relacionamento)
 
 * add unit specs
 
@@ -71,5 +72,5 @@
   - add notification to users by activities like, receive comment, someone start to follow, someone liked...
   - inatall notification error by email in production
   - install facker
-  - font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
-  - da uma olhada na gem active admin, é interessante
+  [OK] font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
+  [OK] da uma olhada na gem active admin, é interessante

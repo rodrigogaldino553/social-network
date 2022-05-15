@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: %i[ show edit update destroy ]
+  before_action :set_picture, only: %i[ show edit update destroy like unlike ]
   skip_before_action :authenticate_user!, only: [:index]
 
   # GET /pictures or /pictures.json
@@ -9,6 +9,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1 or /pictures/1.json
   def show
+    # @likes = Like.where(picture_id: @picture.id).where(like: true)
   end
 
   # GET /pictures/new
@@ -57,6 +58,40 @@ class PicturesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to pictures_url, notice: "Picture was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def like
+    @user = current_user.id
+    @existent_like = @picture.likes.find_by(user_id: @user)
+    unless @existent_like.nil?
+      @existent_like.update_attribute(:like, true)
+    else
+      @like = Like.new picture_id: @picture.id, user_id: @user, like: true
+      @like.save
+    end
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(@picture, partial: 'pictures/picture', locals: {picture: @picture})
+      end
+      format.html do
+        redirect_to @picture
+      end
+      #format.html { redirect_to pictures_path }
+    end
+  end
+
+  def unlike
+    @like = @picture.likes.find_by(user_id: current_user)
+    @like.update_attribute(:like, false)
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(@picture, partial: 'pictures/picture', locals: {picture: @picture})
+      end
+      format.html do
+        redirect_to @picture
+      end
+      # format.html { redirect_to pictures_path }
     end
   end
 
