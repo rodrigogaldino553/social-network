@@ -47,6 +47,7 @@
   - fix header issues
   - arrumar opções(search users, add new picture)
   - arrumar logo
+  - add favicon
 
 [OUT] abrir modal ao clicar na foto no index
   [OUT] ele abre um modal mostando a foto em full na tela, e um x pra sair
@@ -56,9 +57,9 @@
 
 * infinity scroll, content: https://www.youtube.com/watch?v=ScxUqW29F7E
 
-* add authorization com rolify e pundit, content: https://www.youtube.com/watch?v=URDKxGn0pxo&t=9s , https://www.youtube.com/watch?v=xxkx57-vbQI&t=2s
+[OK] add authorization com rolify e pundit, content: https://www.youtube.com/watch?v=URDKxGn0pxo&t=9s , https://www.youtube.com/watch?v=xxkx57-vbQI&t=2s
 
-* add likes(isso vai ter um relacionamento entre tabelas), content: https://www.youtube.com/watch?v=o26zl4jskWU&t=17s
+[OK] add likes(isso vai ter um relacionamento entre tabelas), content: https://www.youtube.com/watch?v=o26zl4jskWU&t=17s
 
 * add comments(tbm vai ter relacionamento)
 

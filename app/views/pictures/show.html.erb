@@ -1,9 +1,12 @@
 <div class="mx-2 mt-4 mb-5 pb-4">
   <!--navigation here-->
+  <%= link_to pictures_path do %>
+    <h5 class="m-2"><i class="fa fa-circle-chevron-left" aria-hidden="true"></i> Home</h5>
+  <% end %>
   <div>
     <%= render @picture %>
-    <h5>You can:</h5>
     <% if policy(@picture).edit? %>
+      <h5>You can:</h5>
       <div class="d-flex mb-4">
         <%= link_to edit_picture_path(@picture), class: "btn btn-warning text-light mx-2" do %>
           Edit <i class="fa fa-pencil-square" aria-hidden="true"></i>

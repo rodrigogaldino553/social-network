@@ -71,7 +71,13 @@ class PicturesController < ApplicationController
       @like.save
     end
     respond_to do |format|
-      format.html { redirect_to pictures_path }
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(@picture, partial: 'pictures/picture', locals: {picture: @picture})
+      end
+      format.html do
+        redirect_to @picture
+      end
+      #format.html { redirect_to pictures_path }
     end
   end
 
@@ -79,7 +85,13 @@ class PicturesController < ApplicationController
     @like = @picture.likes.find_by(user_id: current_user)
     @like.update_attribute(:like, false)
     respond_to do |format|
-      format.html { redirect_to pictures_path }
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(@picture, partial: 'pictures/picture', locals: {picture: @picture})
+      end
+      format.html do
+        redirect_to @picture
+      end
+      # format.html { redirect_to pictures_path }
     end
   end
 
