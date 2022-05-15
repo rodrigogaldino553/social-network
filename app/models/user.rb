@@ -16,6 +16,11 @@ class User < ApplicationRecord
   has_many :pictures_url
   has_many :comments, dependent: :nullify
 
+  has_many :followed_users, foreign_key: :follower_id, class_name: 'Follow'
+  has_many :followees, through: :followed_users
+  has_many :following_users, foreign_key: :followee_id, class_name: 'Follow'
+  has_many :followers, through: :following_users
+
   validates :avatar, attached: true,
     content_type: { in: ['image/png', 'image/jpeg', 'image/jpg'], message: 'File selected is not a valid image' },
     size: { less_than: 3.megabytes, message: 'Is too large' }

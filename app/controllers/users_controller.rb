@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit]
+  before_action :set_user, only: [:show, :edit, :follow, :unfollow, :followers, :followees]
 
   def index
     @users = User.all
@@ -26,6 +26,32 @@ class UsersController < ApplicationController
   #     binding.pry
   #   end
   # end
+
+  def follow
+    # @user = User.find(params[:id])
+    current_user.followees << @user
+    redirect_back(fallback_location: user_path(@user))
+  end
+  
+  def unfollow
+    # @user = User.find(params[:id])
+    current_user.followed_users.find_by(followee_id: @user.id).destroy
+    redirect_back(fallback_location: user_path(@user))
+  end
+
+  def followers
+    @followers = @user.followers
+    respond_to do |format|
+      format.html { render 'users/follows', locals: {user: @user, followers: @followers} }
+    end
+  end
+
+  def followees
+    @followees = @user.followees
+    respond_to do |format|
+      format.html { render 'users/follows', locals: {user: @user, followees: @followees} }
+    end
+  end
 
   private
 
