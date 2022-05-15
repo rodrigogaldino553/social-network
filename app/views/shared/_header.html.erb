@@ -5,6 +5,6 @@
   <% end %>
   <%= link_to '+ New picture', new_picture_path, class: "text-white no-decoration" %>
   <% if current_user %>
-    <%= render 'users/user_preview', user: current_user, name: false %>
+    <%= render 'users/user_preview', locals: { user: current_user, name: false } %>
   <% end %>
 </nav>
