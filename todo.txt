@@ -61,7 +61,7 @@
 
 [OK] add likes(isso vai ter um relacionamento entre tabelas), content: https://www.youtube.com/watch?v=o26zl4jskWU&t=17s
 
-* add comments(tbm vai ter relacionamento)
+[OK] add comments(tbm vai ter relacionamento)
 
 * add unit specs
 
@@ -72,5 +72,5 @@
   - add notification to users by activities like, receive comment, someone start to follow, someone liked...
   - inatall notification error by email in production
   - install facker
-  - font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
-  - da uma olhada na gem active admin, é interessante
+  [OK] font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
+  [OK] da uma olhada na gem active admin, é interessante

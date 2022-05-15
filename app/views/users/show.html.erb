@@ -35,7 +35,7 @@
       <% if (current_user && current_user.id == @user.id ) %>
         <div>
           <%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
-            Edit Profile
+            Edit Profile <i class="fa fa-pencil-square text-white" aria-hidden="true"></i>
           <% end %>
         </div>
       <% end %>

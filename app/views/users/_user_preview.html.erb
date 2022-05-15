@@ -1,26 +1,28 @@
-<%= link_to (user_path(user)), class: "no-decoration text-dark" do %>
-  <div class="d-flex px-2 py-3 justify-start align-items-center">
-    <div>
-      <% if user.avatar.attached? %>
-        <%= image_tag user.avatar, style: "width: 50px; height: 50px; border-radius: 100%; object-fit: cover;" %>
-      <% end %>
+<div id="<%= dom_id user %>">
+  <%= link_to (user_path(user)), class: "no-decoration text-dark" do %>
+    <div class="d-flex px-2 py-3 justify-start align-items-center">
+      <div>
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar, style: "width: 50px; height: 50px; border-radius: 100%; object-fit: cover;" %>
+        <% end %>
+      </div>
+      <div>
+        <% if name %>
+          <div class="mx-2 d-flex justify-center align-items-center">
+            <%= user.name %>
+          </div>
+        <% end %>
+        <% if action_name == "index" && current_page?(pictures_path) && name %>
+          <div class="mx-2 d-flex justify-center align-items-center text-secondary">
+            <%= user.username %>
+          </div>
+        <% end %>
+        <% if current_page?(users_path) || current_page?(user_path(user.id)) && name %>
+          <div class="mx-2 d-flex justify-center align-items-center text-secondary">
+            <%= user.description %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div>
-      <% if name %>
-        <div class="mx-2 d-flex justify-center align-items-center">
-          <%= user.name %>
-        </div>
-      <% end %>
-      <% if action_name == "index" && current_page?(pictures_path) && name %>
-        <div class="mx-2 d-flex justify-center align-items-center text-secondary">
-          <%= user.username %>
-        </div>
-      <% end %>
-      <% if current_page?(users_path) || current_page?(user_path(user.id)) && name %>
-        <div class="mx-2 d-flex justify-center align-items-center text-secondary">
-          <%= user.description %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
