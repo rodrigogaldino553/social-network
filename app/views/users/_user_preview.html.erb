@@ -1,5 +1,5 @@
 <div id="<%= dom_id user %>">
-  <%= link_to (user_path(user)), class: "no-decoration text-dark" do %>
+  <%= link_to (user_path(user)), class: "no-decoration text-dark d-flex" do %>
     <div class="d-flex px-2 py-3 justify-start align-items-center">
       <div>
         <% if user.avatar.attached? %>
@@ -10,6 +10,9 @@
         <% if name %>
           <div class="mx-2 d-flex justify-center align-items-center">
             <%= user.name %>
+            <% if user.has_role?(:verifeid) %>
+              <i class="fa fa-check-circle text-primary mx-2" aria-hidden="true"></i>
+            <% end %>
           </div>
         <% end %>
         <% if action_name == "index" && current_page?(pictures_path) && name %>
