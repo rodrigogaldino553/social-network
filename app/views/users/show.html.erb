@@ -27,18 +27,29 @@
   </style>
 <!-- move to stylesheets files -->
 <div class="container">
-  <h4><%= "<-- #{@user.username}'s  Profile" %></h4>
+  <%= link_to pictures_path do %>
+    <h5 class="m-2"><i class="fa fa-circle-chevron-left" aria-hidden="true"></i> Home</h5>
+  <% end %>
   <div class="card">
     <div class="card-header">
-      <div></div>
+      <div>
         <%= render 'users/user_preview', user: @user, name: true %>
-      <% if (current_user && current_user.id == @user.id ) %>
-        <div>
-          <%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
-            Edit Profile <i class="fa fa-pencil-square text-white" aria-hidden="true"></i>
-          <% end %>
-        </div>
-      <% end %>
+        <% if (current_user && current_user.id == @user.id ) %>
+          <div>
+            <%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
+              Edit Profile <i class="fa fa-pencil-square text-white" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to user_followers_path(@user) do %>
+          X followers
+        <% end %>
+        <%= link_to user_followers_path(@user) do %>
+          X following
+        <% end %>
+      </div>
     </div>
     <div class="card-body">
       <% if @pictures.count > 0 %>
