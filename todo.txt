@@ -45,6 +45,7 @@
 * admin
   - create admin_users view
     it could be like corsego, show all users, and status, like if online, last sign in....
+  - add easyly way to admin destroy picture
 
 * header
   - header padding

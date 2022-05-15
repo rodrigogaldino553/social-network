@@ -8,6 +8,11 @@
         published <%= time_ago_in_words(picture.created_at) %> ago
       </span>
     </div>
+    <% if current_user.has_role?(:admin) %>
+      <%= button_to @picture, method: :delete, class: "btn btn-danger" do %>
+        Delete <i class="fa fa-trash" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
   </div>
   <div class="card-body p-0">
     <%= link_to picture do %>
