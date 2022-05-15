@@ -11,8 +11,8 @@
 
 * look at this UI example: https://www.youtube.com/watch?v=4WoOjIaEkOY
 
-* add the possibility to users follow each other
-  - user see posts only from who he follows, like here: https://www.youtube.com/watch?v=4WoOjIaEkOY
+[OK] add the possibility to users follow each other
+  [OUT] user see posts only from who he follows, like here: https://www.youtube.com/watch?v=4WoOjIaEkOY
 
 *views
   [OK] add time_ago to pictures view
@@ -36,7 +36,7 @@
   [OK] user non logged in can access index page
   - fix errors page
   - add user profile preview on hover user name like github, content: https://www.youtube.com/watch?v=_T6uOL9L7NM&t=1s
-  - add infos like followers, following and posts count in user show header
+  [OK] add infos like followers, following and posts count in user show header
   
   - use letter_oppner
   - add send mails, content: https://www.youtube.com/watch?v=eYhi_rbnOo8
@@ -69,10 +69,13 @@
 
 [OK] add comments(tbm vai ter relacionamento)
   - make comments works with turbo
+  
+[OK] add the possibility to users follow each other
+  - make (buttons, numbers) works with turbo
 
 * add unit specs
 
-* add verifeid feature
+[OK] add verifeid feature
 
 * gems
   - install firndlyid
