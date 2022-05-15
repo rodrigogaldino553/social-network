@@ -42,18 +42,19 @@
           </div>
         <% end %>
       </div>
-      <div>
-        <%= link_to user_followers_path(@user) do %>
-          X followers
+      <div class="d-flex w-100 justify-content-around">
+        <%= link_to user_followers_path(@user), class: 'no-decoration text-dark d-flex flex-column text-center' do %>
+          <h5 class="no-decoration text-dark d-flex flex-column text-center"><%= number_to_human(@user.followers.count) %><span>followers</span></h5>
         <% end %>
-        <%= link_to user_followers_path(@user) do %>
-          X following
+        <%= link_to user_followees_path(@user), class: 'no-decoration text-dark d-flex flex-column text-center' do %>
+          <h5 class="no-decoration text-dark d-flex flex-column text-center"><%= number_to_human(@user.followees.count) %><span>following</span></h5>
         <% end %>
+        <h5 class="no-decoration text-dark d-flex flex-column text-center"><%= @pictures.count %><span>Posts</span></h5>
       </div>
     </div>
     <div class="card-body">
       <% if @pictures.count > 0 %>
-        <h4><%= "#{@user.name}'s pictures(#{@pictures.count})" %></h4>
+        <h4><%= "#{@user.name}'s pictures" %></h4>
         <div class="grid">
             <% @pictures.each_with_index do |picture, index| %>
               <% if index %3 == 0%>

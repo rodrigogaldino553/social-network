@@ -1,0 +1,13 @@
+<% follows = nil %>
+<% if defined?(followers).nil? %>
+  <% follows = followees %>
+  <h4><%= "Who #{user.name} is following" %></h4>
+<% else %>
+  <% follows = followers %>
+  <h4><%= "Who is following #{user.name}" %></h4>
+<% end %>
+
+<% follows.each do |follow| %>
+  <%= render 'users/user_preview', user: follow, name: true %>
+  <hr>
+<% end %>
