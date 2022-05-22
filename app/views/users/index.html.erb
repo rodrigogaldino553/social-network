@@ -2,6 +2,6 @@
 <h4>Users</h4>
 
 <% @users.each do |user| %>
-  <%= render 'users/user_preview', user: user, name: true %>
+  <%= render 'users/user_preview', locals: { user: user, name: true, description: true, follows: true } %>
   <hr></hr>
 <% end %>

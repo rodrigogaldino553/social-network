@@ -1,14 +1,14 @@
 <div id="<%= dom_id picture %>" class="card my-1 shadow">
   <div class="card-header">
     <div>
-      <%= render 'users/user_preview', user: picture.user, name: true %>
+      <%= render 'users/user_preview', locals: { user: picture.user, name: true, username: true, follows: true } %>
     </div>
     <div class="d-flex justify-content-space-around">
       <span class="text-secondary m-2">
         published <%= time_ago_in_words(picture.created_at) %> ago
       </span>
     </div>
-    <% if current_user.has_role?(:admin) %>
+    <% if current_user && current_user.has_role?(:admin) %>
       <%= button_to @picture, method: :delete, class: "btn btn-danger" do %>
         Delete <i class="fa fa-trash" aria-hidden="true"></i>
       <% end %>
@@ -31,7 +31,7 @@
     </div>
     <div>
       <div class="d-flex justify-start mt-4">
-        <% user_like = picture.likes.find_by(user_id: current_user.id) %>
+        <% user_like = current_user ? picture.likes.find_by(user_id: current_user.id) : false %>
         <% if user_like && user_like.like %>
           <%= link_to unlike_picture_path(picture), class: 'no-decoration d-flex flex-column text-center mx-2 text-dark' do %>
             <h5><i class="fa-solid fa-heart text-danger"></i></h5>

@@ -1,40 +1,40 @@
-<div id="<%= dom_id user %>" class="px-1 py-3 d-flex justify-content-between align-items-center">
-  <%= link_to (user_path(user)), class: "no-decoration text-dark" do %>
+<div id="<%= dom_id locals[:user] %>" class="px-1 py-3 d-flex justify-content-between align-items-center">
+  <%= link_to (user_path(locals[:user])), class: "no-decoration text-dark" do %>
     <div class="d-flex justify-start align-items-center">
       <div>
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar, style: "width: 50px; height: 50px; border-radius: 100%; object-fit: cover;" %>
+        <% if locals[:user].avatar.attached? %>
+          <%= image_tag locals[:user].avatar, style: "width: 50px; height: 50px; border-radius: 100%; object-fit: cover;" %>
         <% end %>
       </div>
       <div>
-        <% if name %>
+        <% if locals[:name] %>
           <div class="mx-2 d-flex justify-center align-items-center">
-            <%= user.name %>
-            <% if user.has_role?(:verifeid) %>
+            <%= locals[:user].name %>
+            <% if locals[:user].has_role?(:verifeid) %>
               <i class="fa fa-check-circle text-primary mx-2" aria-hidden="true"></i>
             <% end %>
           </div>
         <% end %>
-        <% if action_name == "index" && current_page?(pictures_path) && name %>
+        <% if locals[:username] %>
           <div class="mx-2 d-flex justify-center align-items-center text-secondary">
-            <%= user.username %>
+            <%= locals[:user].username %>
           </div>
         <% end %>
-        <% if current_page?(users_path) || current_page?(user_path(user.id)) && name %>
+        <% if locals[:description] %>
           <div class="mx-2 d-flex justify-center align-items-center text-secondary">
-            <%= user.description %>
+            <%= locals[:user].description %>
           </div>
         <% end %>
       </div>
     </div>
   <% end %>
-  <% if user.id != current_user.id %>
-    <% if current_user.followees.include?(user) %>
-      <%= button_to unfollow_user_path(user), method: :post, class: 'btn btn-sm btn-primary' do %>
+  <% if locals[:follows] && current_user && (locals[:user].id != current_user.id) %>
+    <% if current_user.followees.include?(locals[:user]) %>
+      <%= button_to unfollow_user_path(locals[:user]), method: :post, class: 'btn btn-sm btn-outline-primary' do %>
         Unfollow <i class="fa fa-user-xmark mx-1" aria-hidden="true"></i>
       <% end %>
     <% else %>
-      <%= button_to follow_user_path(user), method: :post, class: 'btn btn-sm btn-primary' do %>
+      <%= button_to follow_user_path(locals[:user]), method: :post, class: 'btn btn-sm btn-primary' do %>
         Follow <i class="fa fa-user-plus mx-1" aria-hidden="true"></i>
       <% end %>
     <% end %>
