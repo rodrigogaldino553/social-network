@@ -33,7 +33,7 @@
   <div class="card">
     <div class="card-header">
       <div>
-        <%= render 'users/user_preview', locals: { user: @user, name: true, description: true } %>
+        <%= render 'users/user_preview', locals: { user: @user, name: true, description: true, follows: true } %>
         <% if (current_user && current_user.id == @user.id ) %>
           <div>
             <%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>

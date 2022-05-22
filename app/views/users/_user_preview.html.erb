@@ -28,9 +28,9 @@
       </div>
     </div>
   <% end %>
-  <% if current_user && locals[:user].id != current_user.id %>
+  <% if locals[:follows] && current_user && (locals[:user].id != current_user.id) %>
     <% if current_user.followees.include?(locals[:user]) %>
-      <%= button_to unfollow_user_path(locals[:user]), method: :post, class: 'btn btn-sm btn-primary' do %>
+      <%= button_to unfollow_user_path(locals[:user]), method: :post, class: 'btn btn-sm btn-outline-primary' do %>
         Unfollow <i class="fa fa-user-xmark mx-1" aria-hidden="true"></i>
       <% end %>
     <% else %>

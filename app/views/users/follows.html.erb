@@ -11,7 +11,7 @@
   <div>
     <hr>
     <% follows.each do |follow| %>
-      <%= render 'users/user_preview', locals: { user: follow, name: true, username: true } %>
+      <%= render 'users/user_preview', locals: { user: follow, name: true, username: true, follows: true } %>
       <hr>
     <% end %>
   </div>
