@@ -31,7 +31,7 @@
     [OK] create user controller and views like ruby gems corsego
   [OK] add advise that cant update information temporaly
   [OK] update custom informations from devise
-  [OK] set a char limit(40) to user description
+  [OK] set a char limit(40) to user status
   [OK] add username convertion in email first part/@
   [OK] user non logged in can access index page
   - fix errors page
