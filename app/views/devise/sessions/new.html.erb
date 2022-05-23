@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="container-sm d-flex flex-column justify-center align-middle">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
       <div class="field form-group">
         <%= f.label :email, class: "form-label" %><br />
         <%= f.email_field :email, class: "form-control w-100", autofocus: true, autocomplete: "email" %>
