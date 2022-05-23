@@ -27,7 +27,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 15 }
   validates :name, presence: true
-  validates :description, length: { maximum: 30 }
+  validates :status, length: { maximum: 30 }
 
   before_validation :no_avatar
 
