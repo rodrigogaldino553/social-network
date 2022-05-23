@@ -25,6 +25,8 @@
   - add ground navigation with basics options, like(home, search, back, create...)
   [OK] add username to user profile view
   - add turbo to comments and likes
+  [OK] fix picture card header padding to show follows btn
+  - fix card comment header padding, and where it shows time
 
 * users
   [OK] create user profile
@@ -47,6 +49,8 @@
     it could be like corsego, show all users, and status, like if online, last sign in....
   - add easyly way to admin destroy picture
   - fix admin destroy pictures
+  - {maybe} add possibility to admin ban users
+  - {maybe} pictures needs to be approved by admin before
 
 * header
   - header padding
@@ -78,6 +82,8 @@
 * add unit specs
 
 [OK] add verifeid feature
+
+* generate a pwa
 
 * gems
   - install firndlyid
