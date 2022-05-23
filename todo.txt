@@ -83,8 +83,6 @@
 
 [OK] add verifeid feature
 
-* generate a pwa
-
 * gems
   - install firndlyid
   - install ransack
