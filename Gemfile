@@ -87,3 +87,5 @@ gem "active_storage_validations", "~> 0.9.8"
 gem "pundit", "~> 2.2"
 
 gem "rolify", "~> 6.0"
+
+gem "nokogiri", ">= 1.13.6"
