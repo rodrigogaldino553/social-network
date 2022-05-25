@@ -62,6 +62,14 @@ class PicturesController < ApplicationController
   end
 
   def like
+    # @like = @picture.likes.where(user: current_user).first_or_create
+    # @like.like = true
+
+    # respond_to do |format|
+    #   format.turbo_stream { render turbo_stream: turbo_stream.replace(@like) }
+    #   format.html { redirect_to @picture }
+    # end
+    
     @user = current_user.id
     @existent_like = @picture.likes.find_by(user_id: @user)
     unless @existent_like.nil?
@@ -82,6 +90,8 @@ class PicturesController < ApplicationController
   end
 
   def unlike
+    # @like = @picture.likes.where(user: current_user).destroy_all
+    # render :create
     @like = @picture.likes.find_by(user_id: current_user)
     @like.update_attribute(:like, false)
     respond_to do |format|
