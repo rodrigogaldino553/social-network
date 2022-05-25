@@ -27,6 +27,8 @@
   - add turbo to comments and likes
   [OK] fix picture card header padding to show follows btn
   - fix card comment header padding, and where it shows time
+  - fix responsive padding of picture card, to screens width > 500px it could be px-2
+  - show who liked pictures, like follows
 
 * users
   [OK] create user profile
