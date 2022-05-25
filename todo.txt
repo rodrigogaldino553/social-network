@@ -93,3 +93,5 @@
   - add internacionaliation, content: https://www.youtube.com/watch?v=hqC2zZqSrTI
   [OK] font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
   [OK] da uma olhada na gem active admin, é interessante
+
+* Try to use some tacker like google analytics, umamijs or portable
