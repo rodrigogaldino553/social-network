@@ -3,6 +3,13 @@
   <head>
     <title>SocialNetwork</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta description="Post your pictures and what you thinking">
+    <meta keywords= "meet people, network, online meeting">
+    <meta author= "Rodrigo Galdino">
+    <meta name="theme-color" content="#4B1D3F">
+
+    <%= favicon_link_tag asset_path('favicon.png') %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,15 +21,9 @@
     <% end %>
 
     <%= render 'layouts/google_analytics' %>
-
-    <style>
-      .turbo-progress-bar{
-        background: pink !important;
-      }    
-    </style>
   </head>
 
-  <body style="min-height: 100vh; height: max-content;">
+  <body style="min-height: 100vh; height: max-content; background: var(--bg-color);">
     <%= render 'shared/alert' %>
     <div style="min-height: 100vh; height: max-content;">
       <%= render 'shared/header' %>
