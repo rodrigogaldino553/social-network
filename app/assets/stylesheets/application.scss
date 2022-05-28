@@ -20,7 +20,7 @@
 // app collors
 :root{
   --primary-color: #4B1D3F;
-  --sencondary-color: #D62246;
+  --secondary-color: #D62246;
   --third-color: #0E7C7B;
   --bg-color: #e6f7eb;
 }
@@ -30,5 +30,5 @@
 }
 
 .turbo-progress-bar{
-  background: var(--sencondary-color) !important;
+  background: var(--secondary-color) !important;
 } 

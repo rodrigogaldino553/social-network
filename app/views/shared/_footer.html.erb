@@ -1,8 +1,13 @@
-<footer class="bg-light text-center text-lg-start">
+<footer class="text-center text-lg-start mt-4 pt-3 text-light" style="background: var(--primary-color);">
+  <div class="d-flex flex-column text-center">
+    <%= link_to 'Privacy policy', '#', class: 'text-light no-decoration' %>
+    <%= link_to 'Terms & conditions', '#', class: 'text-light no-decoration' %>
+    <%= link_to 'Support', '#', class: 'text-light no-decoration' %>
+  </div>
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center bg-secondary mt-3">
     © 2022 Copyright:
-    <%= link_to 'SocialNetwork', pictures_path, class: "text-dark" %>
+    <%= link_to 'Network', pictures_path, class: 'text-light' %>
   </div>
   <!-- Copyright -->
 </footer>
