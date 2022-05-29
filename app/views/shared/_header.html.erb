@@ -1,9 +1,12 @@
 <!-- Image and text -->
 <nav class="navbar navbar-dark bg-dark px-1">
   <%= link_to pictures_path, class: "no-decoration" do %>
-    <h5 class="navbar-brand no-decoration">SocialNetwork</h5>
+    <h5 class="navbar-brand no-decoration"><i class="fa-solid fa-globe"></i> Network</h5>
   <% end %>
-  <%= link_to '+ New picture', new_picture_path, class: "text-white no-decoration" %>
+  <%= link_to new_picture_path, class: "text-white d-flex flex-column no-decoration", style: 'transform: translateX(-50%)' do %>
+    <i class="fa-solid fa-plus" style="font-size: 22px;"></i>
+    <span style="font-size: 10px;">New Post</span>
+  <% end %>
   <% if current_user %>
     <%= render 'users/user_preview', locals: { user: current_user } %>
   <% end %>

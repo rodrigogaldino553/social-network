@@ -17,6 +17,18 @@
 
 @import "bootstrap";
 
+// app collors
+:root{
+  --primary-color: #4B1D3F;
+  --secondary-color: #D62246;
+  --third-color: #0E7C7B;
+  --bg-color: #e6f7eb;
+}
+
 .no-decoration{
   text-decoration: none !important;
 }
+
+.turbo-progress-bar{
+  background: var(--secondary-color) !important;
+} 

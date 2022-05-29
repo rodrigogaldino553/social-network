@@ -67,19 +67,19 @@
 [OK] footer no fim da pagina
   [OK] pra isso é so por o min-height do html como 100%
 
-* infinity scroll, content: https://www.youtube.com/watch?v=ScxUqW29F7E
+[OUT] infinity scroll, content: https://www.youtube.com/watch?v=ScxUqW29F7E
 
 [OK] add authorization com rolify e pundit, content: https://www.youtube.com/watch?v=URDKxGn0pxo&t=9s , https://www.youtube.com/watch?v=xxkx57-vbQI&t=2s
 
 [OK] add likes(isso vai ter um relacionamento entre tabelas), content: https://www.youtube.com/watch?v=o26zl4jskWU&t=17s
-  - make likes by gem acts as vottable
-  - make likes works with turbo
+  [OUT] make likes by gem acts as vottable
+  [OUT] make likes works with turbo
 
 [OK] add comments(tbm vai ter relacionamento)
-  - make comments works with turbo
+  [OUT] make comments works with turbo
   
 [OK] add the possibility to users follow each other
-  - make (buttons, numbers) works with turbo
+  [OUT] make (buttons, numbers) works with turbo
 
 * add unit specs
 
@@ -96,4 +96,4 @@
   [OK] font-awesome, content: https://www.youtube.com/watch?v=c-EbQDB0RsQ&t=30s
   [OK] da uma olhada na gem active admin, é interessante
 
-* Try to use some tacker like google analytics, umamijs or portable
+[OK] Try to use some tacker like google analytics, umamijs or portable
