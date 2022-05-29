@@ -4,7 +4,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { :host => 'https://social-networkr.herokuapp.com', :protocol => 'https' }
   config.action_mailer.perform_deliveries = true
-  #config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
@@ -15,6 +15,14 @@ Rails.application.configure do
     password: ENV["MAIL_PASSWORD"],
     authentication: "plain",
     enable_starttls_auto: true
+  }
+
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+  email: {
+    deliver_with: :deliver, # Rails >= 4.2.1 do not need this option since it defaults to :deliver_now
+    email_prefix: '[PREFIX] ',
+    sender_address: %{"corsego error" <railsmails553@gmail.com>}, #maybe this email dont work, so try to switch to a valid email like "englishgaldino553@gmail.com" like the other 
+    exception_recipients: %w{railsmails553@gmail.com}
   }
   # Code is not reloaded between requests.
   config.cache_classes = true
