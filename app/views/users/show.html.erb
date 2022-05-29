@@ -41,7 +41,7 @@
               Edit Profile
             <% end %>
 
-            <%= button_to destroy_user_session_path, method: :delete, data: {turbo: false}, class: "btn btn-danger ml-1" do %>
+            <%= button_to destroy_user_session_path, method: :delete, data: {turbo: false}, class: "btn btn-danger ml-1", style: 'margin-left: 5px;' do %>
               <i class="fa fa-sign-out" aria-hidden="true"></i>
               Sign out
             <% end %>

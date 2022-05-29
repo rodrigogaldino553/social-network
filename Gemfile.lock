@@ -125,6 +125,9 @@ GEM
       warden (~> 1.2.3)
     digest (3.1.0)
     erubi (1.10.0)
+    exception_notification (4.5.0)
+      actionmailer (>= 5.2, < 8)
+      activesupport (>= 5.2, < 8)
     execjs (2.8.1)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -288,6 +291,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.8)
+  exception_notification (~> 4.5)
   importmap-rails
   jbuilder
   letter_opener (~> 1.8)
