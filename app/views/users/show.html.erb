@@ -62,7 +62,7 @@
       <% if @pictures.count > 0 %>
         <h4><%= "#{@user.name}'s pictures" %></h4>
         <div class="grid">
-            <% @pictures.each_with_index do |picture, index| %>
+            <% @pictures.order(created_at: :desc).each_with_index do |picture, index| %>
               <% if index %3 == 0%>
                 </div>
                 <div class="row row-cols-3 content-row">
