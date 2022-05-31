@@ -19,7 +19,9 @@
       <%= yield :head %>
     <% end %>
 
-    <%= render 'layouts/google_analytics' %>
+    <% if Rails.env.production? %>
+      <%= render 'layouts/google_analytics' %>
+    <% end %>
   </head>
 
   <body style="min-height: 100vh; height: max-content;">
