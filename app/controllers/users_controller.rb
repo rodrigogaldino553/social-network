@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :follow, :unfollow, :followers, :followees]
+  before_action :record_user_view, if -> { action_name == 'show' }
 
   def index
     @users = User.all
@@ -51,6 +52,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { render 'users/follows', locals: {user: @user, followees: @followees} }
     end
+  end
+
+  def record_user_view
+    # logic
   end
 
   private
