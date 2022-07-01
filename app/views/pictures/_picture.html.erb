@@ -1,57 +1,67 @@
-<div id="<%= dom_id picture %>" class="card my-1 shadow">
-  <div class="card-header p-1">
-    <div>
-      <%= render 'users/user_preview', locals: { user: picture.user, name: true, username: true, follows: true } %>
-    </div>
-    <div class="d-flex justify-content-space-around">
-      <span class="text-secondary m-2">
-        published <%= time_ago_in_words(picture.created_at) %> ago
-      </span>
-    </div>
-    <% if current_user && current_user.has_role?(:admin) %>
-      <%= button_to picture, method: :delete, class: "btn btn-danger" do %>
-        Delete <i class="fa fa-trash" aria-hidden="true"></i>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="card-body p-0">
-    <%= link_to picture do %>
-      <div class="w-100 border-bottom">
-        <% if picture.photo.attached? %>
-          <%= image_tag picture.photo, class: 'photo w-100 h-54', style: "object-fit: cover;" %>
-        <% end %>
+<% if policy(picture).show? %>
+  <div id="<%= dom_id picture %>" class="card my-1 shadow">
+    <div class="card-header p-1">
+      <div>
+        <%= render 'users/user_preview', locals: { user: picture.user, name: true, username: true, follows: true } %>
       </div>
-    <% end %>
-  </div>
-  <div class="card-footer">
-    <div class="picture-legend">
-      <%= link_to picture, class: "text-dark no-decoration" do %>
-        <strong><%= picture.user.name %></strong> <%= action_name == "index" ? "#{picture.legend[..40]} <b>see more...</b>".html_safe : picture.legend %>
+      <div class="d-flex justify-content-space-around">
+        <span class="text-secondary m-2">
+          published <%= time_ago_in_words(picture.created_at) %> ago
+        </span>
+      </div>
+      <% if current_user && current_user.has_role?(:admin) %>
+        <%= button_to picture, method: :delete, class: "btn btn-danger" do %>
+          Delete <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
+        <% if picture.has_role?(:non_approved) %>
+          <%= button_to 'Approve', approve_picture_path(picture), method: :patch, class: 'btn btn-sm btn-success' %>
+        <% end %>
       <% end %>
     </div>
-    <div>
-      <div class="d-flex justify-start mt-4">
-        <% user_like = current_user ? picture.likes.find_by(user_id: current_user.id) : false %>
-        <% if user_like && user_like.like %>
-          <%= link_to unlike_picture_path(picture), class: 'no-decoration d-flex flex-column text-center mx-2 text-dark' do %>
-            <h5><i class="fa-solid fa-heart text-danger"></i></h5>
-            <%= picture.likes.where(like: true).count %>
+    <div class="card-body p-0">
+      <%= link_to picture do %>
+        <div class="w-100 border-bottom">
+          <% if picture.has_role?(:non_approved) %>
+            <div class="w-full text-align-center bg-secondary">
+              <h2>Picture pending to analyse</h2>
+            </div>
           <% end %>
-        <% else %>
-          <%= link_to like_picture_path(picture), class: 'no-decoration d-flex flex-column text-center mx-2 text-dark' do %>
-            <h5><i class="fa-solid fa-heart text-secondary"></i></h5>
-            <%= picture.likes.where(like: true).count %>
+          <% if picture.photo.attached? %>
+            <%= image_tag picture.photo, class: 'photo w-100 h-54', style: "object-fit: cover;" %>
           <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="card-footer">
+      <div class="picture-legend">
+        <%= link_to picture, class: "text-dark no-decoration" do %>
+          <strong><%= picture.user.name %></strong> <%= action_name == "index" ? "#{picture.legend[..40]} <b>see more...</b>".html_safe : picture.legend %>
         <% end %>
-          <!-- likes count here -->
-          
-        <%= link_to "#{picture_path(picture)}/#comments", class: 'no-decoration text-dark' do %>
-          <div class="d-flex flex-column text-center">
-            <h5><i class="fa-solid fa-comment-dots "></i></h5>
-            <%= picture.comments.count %>
-          </div>
-        <% end %>
+      </div>
+      <div>
+        <div class="d-flex justify-start mt-4">
+          <% user_like = current_user ? picture.likes.find_by(user_id: current_user.id) : false %>
+          <% if user_like && user_like.like %>
+            <%= link_to unlike_picture_path(picture), class: 'no-decoration d-flex flex-column text-center mx-2 text-dark' do %>
+              <h5><i class="fa-solid fa-heart text-danger"></i></h5>
+              <%= picture.likes.where(like: true).count %>
+            <% end %>
+          <% else %>
+            <%= link_to like_picture_path(picture), class: 'no-decoration d-flex flex-column text-center mx-2 text-dark' do %>
+              <h5><i class="fa-solid fa-heart text-secondary"></i></h5>
+              <%= picture.likes.where(like: true).count %>
+            <% end %>
+          <% end %>
+            <!-- likes count here -->
+            
+          <%= link_to "#{picture_path(picture)}/#comments", class: 'no-decoration text-dark' do %>
+            <div class="d-flex flex-column text-center">
+              <h5><i class="fa-solid fa-comment-dots "></i></h5>
+              <%= picture.comments.count %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>

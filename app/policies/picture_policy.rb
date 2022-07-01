@@ -6,6 +6,10 @@ class PicturePolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    @record.has_role?(:approved) || (@user && @record.user == @user) || (@user && @user.has_role?(:admin))
+  end
+
   def edit?
     @record.user == @user
   end

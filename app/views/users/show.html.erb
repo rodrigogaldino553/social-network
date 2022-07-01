@@ -62,16 +62,18 @@
       <% if @pictures.count > 0 %>
         <h4><%= "#{@user.name}'s pictures" %></h4>
         <div class="grid">
-            <% @pictures.order(created_at: :desc).each_with_index do |picture, index| %>
-              <% if index %3 == 0%>
-                </div>
-                <div class="row row-cols-3 content-row">
-              <% end %>
+          <% @pictures.order(created_at: :desc).each_with_index do |picture, index| %>
+            <% if index %3 == 0 %>
+              </div>
+              <div class="row row-cols-3 content-row">
+            <% end %>
+            <% if policy(picture).show? %>
               <%= link_to picture, class: "p-0 border-1 content" do %>
                 <%= image_tag picture.photo, class: "border w-100 h-100", style: "object-fit: cover;" %>
               <% end %>
             <% end %>
-            </div>
+          <% end %>
+          </div>
         </div>
       <% else %>
         <h2><%= "#{@user.name} haven't any picture yet :l" %></h2>

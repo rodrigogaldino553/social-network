@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: %i[ show edit update destroy like unlike ]
+  before_action :set_picture, only: %i[ show edit update destroy like unlike approve disapprove ]
   skip_before_action :authenticate_user!, only: [:index]
 
   # GET /pictures or /pictures.json
@@ -106,6 +106,15 @@ class PicturesController < ApplicationController
   end
 
   def privacy_policy
+  end
+
+  def approve
+    @picture.approve
+    
+  end
+
+  def disapprove
+    @picture.disapprove
   end
 
   private

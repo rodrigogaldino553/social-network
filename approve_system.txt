@@ -1,0 +1,9 @@
+Como vai ser implementado?
+	- vamo usar um role, toda nova picture vai receber por padrao o role non-approved, a imagem ficara visivel apenas para mim, o admin, e tera um btn approve, q o ser clicado mudaria o role para approved e ficaria visivel a todos.
+	- Ao lado do btn "approve", teria o delete
+	- esses botoes ficariam no card da img mesmo, apareceria tanto no feed, tanto no action show
+	- A img poderia ter tbm um icon especial pra indicar q nao esta publica(Lembrando disponivel apenas para mim, para o proprietario da img, poderia aparecer uma msg, "enviada para revisao com sucesso, aguarde alguns minutos")
+	- tentar implementar um sistema para enviar um email pra mim com o link da pub, toda vez q uma foto for publicada
+	- ainda sobre email, ao ser aprovada ou nao, o user poderia receber essa informação atraves de um email: "Our teem inspected your publication, and your pub was accepted/rejected by our politcs&terms"
+	- fazer algo semelhante para o avatar de user
+	- copy&paste os termos de algum site. 

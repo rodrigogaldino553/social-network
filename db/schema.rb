@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_23_165709) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_21_191143) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -74,12 +74,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_165709) do
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
+  create_table "pictures_roles", force: :cascade do |t|
+    t.integer "picture_id", null: false
+    t.integer "role_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["picture_id", "role_id"], name: "index_pictures_roles_on_picture_id_and_role_id"
+    t.index ["picture_id"], name: "index_pictures_roles_on_picture_id"
+    t.index ["role_id"], name: "index_pictures_roles_on_role_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
     t.integer "resource_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index "\"pic_name\"", name: "index_roles_on_pic_name"
+    t.index "\"pic_name\", \"resource_type\", \"resource_id\"", name: "index_roles_on_pic_name_and_resource_type_and_resource_id"
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
@@ -119,4 +131,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_165709) do
   add_foreign_key "likes", "pictures"
   add_foreign_key "likes", "users"
   add_foreign_key "pictures", "users"
+  add_foreign_key "pictures_roles", "pictures"
+  add_foreign_key "pictures_roles", "roles"
 end
