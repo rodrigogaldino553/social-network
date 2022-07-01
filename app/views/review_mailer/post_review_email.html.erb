@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Social Network</h2>
+    <p><%= @user[:email] %> uploaded the following photo, please review it, if its inside of our rules and policies:</p>
+    <div>
+      <%= link_to "#{@user[:email]}'s post", "#{pictures_url}/#{@picture[:picture_id]}" %>
+  </body>
+</html>
