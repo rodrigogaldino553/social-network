@@ -15,12 +15,6 @@ class Picture < ApplicationRecord
     # call send email to user, to advice that picture was successfull
   end
 
-  def disapprove
-    self.destroy
-
-    # call send email to user, to advice that picture was rejected
-  end
-
   rolify
 
   belongs_to :user

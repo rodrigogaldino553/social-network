@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       get :like
       get :unlike
       patch :approve
-      patch :disapprove
     end
     # get '/unlike', to: 'pictures#unlike'
   end
