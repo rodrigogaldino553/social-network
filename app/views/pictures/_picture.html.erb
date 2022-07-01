@@ -10,20 +10,24 @@
         </span>
       </div>
       <% if current_user && current_user.has_role?(:admin) %>
-        <%= button_to picture, method: :delete, class: "btn btn-danger" do %>
-          Delete <i class="fa fa-trash" aria-hidden="true"></i>
-        <% end %>
-        <% if picture.has_role?(:non_approved) %>
-          <%= button_to 'Approve', approve_picture_path(picture), method: :patch, class: 'btn btn-sm btn-success' %>
-        <% end %>
+        <div class="flex">
+          <%= button_to picture, method: :delete, class: "btn btn-danger btn-sm" do %>
+            Delete <i class="fa fa-trash" aria-hidden="true"></i>
+          <% end %>
+          <% if picture.has_role?(:unapproved) %>
+            <%= button_to approve_picture_path(picture), method: :patch, class: 'btn btn-sm btn-warning ml-2' do %>
+              Approve (icon)
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
     <div class="card-body p-0">
       <%= link_to picture do %>
         <div class="w-100 border-bottom">
-          <% if picture.has_role?(:non_approved) %>
-            <div class="w-full text-align-center bg-secondary">
-              <h2>Picture pending to analyse</h2>
+          <% if picture.has_role?(:unapproved) %>
+            <div class="w-full text-align-center bg-warning text-white">
+              <h4 class="no-decoration">Picture pending to analyse</h4>
             </div>
           <% end %>
           <% if picture.photo.attached? %>

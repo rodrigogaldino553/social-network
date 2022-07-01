@@ -2,14 +2,13 @@ class Picture < ApplicationRecord
   after_create :assign_default_role
 
   def assign_default_role
-    self.add_role(:non_approved) if self.roles.blank?
-
+    self.add_role(:unapproved) if self.roles.blank?
     # call send email to admins here
   end
 
   #agora como no corsego, acho que cria uma rota pra um controller, e chama esse metodo de la
   def approve
-    self.remove_role(:non_approved)
+    self.remove_role(:unapproved)
     self.add_role(:approved)
 
     # call send email to user, to advice that picture was successfull
