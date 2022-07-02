@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: %i[ show edit update destroy like unlike ]
+  before_action :set_picture, only: %i[ show edit update destroy like unlike approve send_to_review ]
   skip_before_action :authenticate_user!, only: [:index]
 
   # GET /pictures or /pictures.json
@@ -103,6 +103,15 @@ class PicturesController < ApplicationController
       end
       # format.html { redirect_to pictures_path }
     end
+  end
+
+  def approve
+    @picture.update_attribute(:approved, true)
+    redirect_to pictures_path
+  end
+
+  def send_to_review
+
   end
 
   def privacy_policy

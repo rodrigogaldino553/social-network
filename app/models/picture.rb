@@ -9,4 +9,5 @@ class Picture < ApplicationRecord
     size: { less_than: 3.megabytes, message: 'Is too large' }
 
   validates :legend, length: { maximum: 256 }
+
 end
