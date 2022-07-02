@@ -28,8 +28,9 @@ class PicturesController < ApplicationController
     @picture.user_id = current_user.id
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to pictures_path, notice: "Picture was successfully created." }
-        format.json { render :show, status: :created, location: @picture }
+        send_to_review
+        #format.html { redirect_to pictures_path, notice: "Picture was successfully created." }
+        #format.json { render :show, status: :created, location: @picture }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @picture.errors, status: :unprocessable_entity }
@@ -111,7 +112,15 @@ class PicturesController < ApplicationController
   end
 
   def send_to_review
-
+    ReviewMailer
+        .with(user: {
+          name: current_user.name,
+          email: current_user.email
+        },
+        picture: {
+          picture_id: @picture.id
+        }).post_review_email.deliver_later
+      redirect_to pictures_path
   end
 
   def privacy_policy
