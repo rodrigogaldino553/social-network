@@ -67,8 +67,10 @@
                 </div>
                 <div class="row row-cols-3 content-row">
               <% end %>
-              <%= link_to picture, class: "p-0 border-1 content" do %>
-                <%= image_tag picture.photo, class: "border w-100 h-100", style: "object-fit: cover;" %>
+              <% if picture.approved %>
+                <%= link_to picture, class: "p-0 border-1 content" do %>
+                  <%= image_tag picture.photo, class: "border w-100 h-100", style: "object-fit: cover;" %>
+                <% end %>
               <% end %>
             <% end %>
             </div>
