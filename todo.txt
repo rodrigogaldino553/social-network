@@ -4,6 +4,8 @@
 
   [OK] add param "data: { disable_with: 'message' }" to button, to block double requests, try it out to test
 
+- Needs to validates new user account too, if the avatar is ok
+
 [OK] active storage
   [OK] add validations to pictures
   [OK] add validations to pictures :photo
