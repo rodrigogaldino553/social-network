@@ -9,6 +9,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1 or /pictures/1.json
   def show
+    authorize @picture
     # @likes = Like.where(picture_id: @picture.id).where(like: true)
   end
 

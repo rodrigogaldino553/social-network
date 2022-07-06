@@ -1,0 +1,12 @@
+- add um role :unreviewd pra todo novo usuario
+
+- verifica se o current user tem esse role
+    se tiver redireciona ele pra uma page falando q a conta dele precisa ser aprovada
+		esconde a conta dele das outras partes da rede tbm, no action show coloca um authorize
+		cria uma policy referente a isso, so admin pd ver
+
+- envia email pros admin da conta nova
+
+- qnd for aprovado envia email pro user novo tbm
+
+- 

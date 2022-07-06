@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    #authorize @user
     @pictures = Picture.where(user_id: @user.id)
   end
 
@@ -51,6 +52,13 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { render 'users/follows', locals: {user: @user, followees: @followees} }
     end
+  end
+
+  def review_user
+  end
+
+  def unreviewd_user
+    render 'Your account is being reviewed by our, wait the approve!'
   end
 
   private
