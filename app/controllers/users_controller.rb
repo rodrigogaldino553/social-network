@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by(permalink: params[:permalink])
   end
 
   def user_params

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
-  resources :users
+  resources :users, param: :permalink
   post '/users/:id/follow', to: "users#follow", as: "follow_user"
   post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
   get '/users/:id/followers', to: "users#followers", as: "user_followers"
