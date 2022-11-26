@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   after_create :assign_default_role
+  before_create :generate_permalink
 
   def assign_default_role
     self.add_role(:user) if self.roles.blank?
@@ -42,4 +43,14 @@ class User < ApplicationRecord
       self.avatar.attach(io: File.open('./app/assets/images/padrao.png'), filename: 'default.png', content_type: 'image/png')
     end
   end
+
+  def to_param
+    self.permalink
+  end
+
+  private
+
+    def generate_permalink
+      self.permalink = SecureRandom.hex(8)
+    end
 end
