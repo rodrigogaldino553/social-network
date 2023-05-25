@@ -14,7 +14,7 @@ development:
   adapter: postgresql
   database: social_network
   username: social_network
-  password: <%= ENV['SOCIAL_NETWORK_DATABASE_PASSSOCIAL_NETWORK']
+  password: <%= ENV['SOCIAL_NETWORK_DATABASE_PASSSOCIAL_NETWORK'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,4 +29,4 @@ production:
   url: <%= ENV["DATABASE_URL"] %>
   database: social_network
   username: social_network
-  password: <%= ENV['SOCIAL_NETWORK_DATABASE_PASSSOCIAL_NETWORK']
+  password: <%= ENV['SOCIAL_NETWORK_DATABASE_PASSSOCIAL_NETWORK'] %>
