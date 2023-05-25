@@ -11,17 +11,23 @@ default: &default
 
 development:
   <<: *default
-  adapter: postgresql
-  database: social_network
-  username: social_network
-  password: <%= ENV['SOCIAL_NETWORK_DATABASE_PASSSOCIAL_NETWORK'] %>
+  host: 127.0.0.1
+  username: postgres
+  password: postgres
+  port: 5432
+  database: social_network_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  adapter: postgresql
+  host: 127.0.0.1
+  database: social_network_test
+  username: postgres
+  password: postgres
+  port: 5432
 
 production:
   <<: *default
