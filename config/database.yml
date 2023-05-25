@@ -5,13 +5,13 @@
 #   gem "sqlite3"
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  adapter: psql
+  adapter: postgresql
   database: social_network
   username: social_network
   password: <%= ENV['SOCIAL_NETWORK_DATABASE_PASSSOCIAL_NETWORK']
@@ -25,7 +25,8 @@ test:
 
 production:
   <<: *default
-  adapter: psql
+  adapter: postgresql
+  url: <%= ENV["DATABASE_URL"] %>
   database: social_network
   username: social_network
   password: <%= ENV['SOCIAL_NETWORK_DATABASE_PASSSOCIAL_NETWORK']
