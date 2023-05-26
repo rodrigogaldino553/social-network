@@ -4,7 +4,6 @@ class User < ApplicationRecord
 
   def assign_default_role
     self.add_role(:user) if self.roles.blank?
-    self.add_role(:admin) if User.count == 0
   end
 
   # Include default devise modules. Others available are:

