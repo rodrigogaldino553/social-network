@@ -4,7 +4,7 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       
       <div class="d-flex justify-content-center mb-4">
-        <%= image_tag @user.avatar, style: "width: 150px; height: 150px; border-radius: 100%; object-fit: cover;" %>
+        <%= image_tag user_avatar(@user), style: "width: 150px; height: 150px; border-radius: 100%; object-fit: cover;" %>
       </div>
 
       <div class="field form-group mb-4">

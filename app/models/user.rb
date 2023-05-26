@@ -22,26 +22,16 @@ class User < ApplicationRecord
   has_many :following_users, foreign_key: :followee_id, class_name: 'Follow'
   has_many :followers, through: :following_users
 
-  validates :avatar, attached: true,
-    content_type: { in: ['image/png', 'image/jpeg', 'image/jpg'], message: 'File selected is not a valid image' },
-    size: { less_than: 3.megabytes, message: 'Is too large' }
+  validates :avatar, 
+      content_type: { in: ['image/png', 'image/jpeg', 'image/jpg'], message: 'File selected is not a valid image' },
+      size: { less_than: 3.megabytes, message: 'Is too large' }
 
   validates :name, presence: true, length: { maximum: 15 }
-  validates :name, presence: true
   validates :status, length: { maximum: 30 }
-
-  before_validation :no_avatar
 
   def username
     # logic to split user email at @ and take the fisrt part
     self.email.split(/@/).first
-  end
-
-  def no_avatar
-    unless self.avatar.attached?
-      avatar_path = ActionController::Base.helpers.asset_path('padrao.png')
-      self.avatar.attach(io: File.open('./app/assets/images/padrao.png'), filename: 'default.png', content_type: 'image/png')
-    end
   end
 
   def to_param

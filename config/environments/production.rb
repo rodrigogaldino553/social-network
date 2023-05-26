@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.default_url_options = { :host => 'http://social.galdinodev.com', :protocol => 'http' }
+  config.action_mailer.default_url_options = { :host => 'https://social.galdinodev.com', :protocol => 'https' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -13,7 +13,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: "587",
-    domain: "social-networkr.herokuapp.com",
+    domain: "social.galdinodev.com",
     user_name: ENV["EMAIL"],
     password: ENV["MAIL_PASSWORD"],
     authentication: "plain",
