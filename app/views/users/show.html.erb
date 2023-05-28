@@ -49,10 +49,10 @@
         <% end %>
       </div>
       <div class="d-flex w-100 justify-content-around">
-        <%= link_to user_followers_path(@user), class: 'no-decoration text-dark d-flex flex-column text-center' do %>
+        <%= link_to user_followers_path(@user.permalink), class: 'no-decoration text-dark d-flex flex-column text-center' do %>
           <h5 class="no-decoration text-dark d-flex flex-column text-center"><%= number_to_human(@user.followers.count) %><span>followers</span></h5>
         <% end %>
-        <%= link_to user_followees_path(@user), class: 'no-decoration text-dark d-flex flex-column text-center' do %>
+        <%= link_to user_followees_path(@user.permalink), class: 'no-decoration text-dark d-flex flex-column text-center' do %>
           <h5 class="no-decoration text-dark d-flex flex-column text-center"><%= number_to_human(@user.followees.count) %><span>following</span></h5>
         <% end %>
         <h5 class="no-decoration text-dark d-flex flex-column text-center"><%= @pictures.count %><span>Posts</span></h5>
@@ -76,7 +76,7 @@
             </div>
         </div>
       <% else %>
-        <h2><%= "#{@user.name} haven't any picture yet :l" %></h2>
+        <h2><%= "#{@user.name} haven't any picture yet :]" %></h2>
       <% end %>
     </div>
   </div>

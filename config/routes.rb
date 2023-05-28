@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :users, param: :permalink
-  post '/users/:id/follow', to: "users#follow", as: "follow_user"
-  post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
-  get '/users/:id/followers', to: "users#followers", as: "user_followers"
-  get '/users/:id/followees', to: "users#followees", as: "user_followees"
+  post '/users/:permalink/follow', to: "users#follow", as: "follow_user"
+  post '/users/:permalink/unfollow', to: "users#unfollow", as: "unfollow_user"
+  get '/users/:permalink/followers', to: "users#followers", as: "user_followers"
+  get '/users/:permalink/followees', to: "users#followees", as: "user_followees"
 
   resources :pictures do
     resources :comments, except: [:index]
