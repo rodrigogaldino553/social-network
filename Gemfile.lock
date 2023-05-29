@@ -132,6 +132,7 @@ GEM
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    honeybadger (5.2.1)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.2)
@@ -293,6 +294,7 @@ DEPENDENCIES
   debug
   devise (~> 4.8)
   exception_notification (~> 4.5)
+  honeybadger (~> 5.2)
   importmap-rails
   jbuilder
   letter_opener (~> 1.8)

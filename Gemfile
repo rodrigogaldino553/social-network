@@ -89,3 +89,5 @@ gem "rolify", "~> 6.0"
 
 gem "nokogiri", ">= 1.13.6"
 gem "exception_notification", "~> 4.5"
+
+gem "honeybadger", "~> 5.2"
