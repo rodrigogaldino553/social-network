@@ -174,7 +174,7 @@ GEM
       digest
       net-protocol
       timeout
-    nio4r (2.5.8)
+    nio4r (2.5.9)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -187,7 +187,7 @@ GEM
       byebug (~> 11.0)
       pry (~> 0.13.0)
     public_suffix (4.0.7)
-    puma (5.6.4)
+    puma (5.6.7)
       nio4r (~> 2.0)
     pundit (2.2.0)
       activesupport (>= 3.0.0)
@@ -301,7 +301,7 @@ DEPENDENCIES
   nokogiri (>= 1.13.6)
   pg
   pry-byebug (~> 3.9)
-  puma (~> 5.0)
+  puma (~> 5.6)
   pundit (~> 2.2)
   rails (~> 7.0.2, >= 7.0.2.3)
   rolify (~> 6.0)
